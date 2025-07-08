@@ -160,9 +160,10 @@ def reserve_seat(request):
             email_message.send()
 
             return JsonResponse({
-                        'status': 'success',
-                        'message': 'Your message has been sent. We look forward to seeing you!'
-                    })
+            'status': 'success',
+            'message': 'Congratulations! Your reservation to attend the Edo State Oil and Gas Summit has been received. Confirmation is currently pending — you will receive an email from us once your reservation is confirmed.'
+        })
+
 
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': f'Error sending email: {str(e)}'})
