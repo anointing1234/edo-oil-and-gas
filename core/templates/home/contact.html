@@ -352,6 +352,7 @@
               <div class="inner-column">
                 <div class="contact-form">
                   <form method="post" id="email-form" novalidate>
+                         {% csrf_token %}
                     <div class="row">
                       <div class="form-group col-lg-12">
                         <div class="response"></div>
@@ -686,9 +687,7 @@
               </div>
               
               <div class="copyright-text">
-                © Copyright 2025 All Rights Reserved by
-                <a href="https://edooilandgassummit.com" target="_blank">Edo Oil and Gas Summit</a>. | <a
-                  href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+                Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
               </div>
             </div>
           </div>
@@ -805,122 +804,120 @@
     <!-- Color Setting -->
     <script src="{% static 'js/color-settings.js' %}"></script>
 
-    <!-- Direct contact form handling script -->
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        const contactForm = document.getElementById("email-form");
-        if (!contactForm) return;
 
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-        const originalBtnText = submitBtn.innerHTML;
 
-        contactForm.addEventListener("submit", function (e) {
-          e.preventDefault();
+    
 
-          // Get form values
-          const firstName = contactForm
-            .querySelector('input[name="firstName"]')
-            .value.trim();
-          const lastName = contactForm
-            .querySelector('input[name="lastName"]')
-            .value.trim();
-          const email = contactForm
-            .querySelector('input[name="email"]')
-            .value.trim();
-          const phone = contactForm
-            .querySelector('input[name="phone"]')
-            .value.trim();
-          const message = contactForm
-            .querySelector('textarea[name="message"]')
-            .value.trim();
 
-          // Simple validation
-          if (!firstName || !lastName || !email || !phone || !message) {
-            showFeedback("Please fill in all required fields", "error");
-            return;
-          }
+    
 
-          // Email validation
-          if (!validateEmail(email)) {
-            showFeedback("Please enter a valid email address", "error");
-            return;
-          }
+<style>
+  /* Full-screen overlay */
+  #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
 
-          // Show loading state
-          submitBtn.innerHTML =
-            '<span class="spinner"><i class="fa fa-spinner fa-spin"></i></span> Sending...';
-          submitBtn.disabled = true;
+  /* Gold-topped spinner */
+  .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid #FFD700; /* Gold */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+  }
 
-          // Prepare data
-          const formData = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            phone: phone,
-            message: message,
-          };
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
 
-          // Send to server
-          fetch("https://eyif-server.onrender.com/contact", {
-            method: "POST",
-            headers: {
-              "Content-Type": "application/json",
-            },
-            body: JSON.stringify(formData),
-          })
-            .then((response) => {
-              if (!response.ok) {
-                throw new Error("Network response was not ok");
-              }
-              return response.json();
-            })
-            .then((data) => {
-              // Show success message
-              showFeedback(
-                "Thank you for your message! We'll contact you soon.",
-                "success"
-              );
-              contactForm.reset();
-            })
-            .catch((error) => {
-              console.error("Error:", error);
 
-              // For demo purposes, still show success when no server is available
-              showFeedback(
-                "Thank you for your message! We'll contact you soon.",
-                "success"
-              );
-              contactForm.reset();
-            })
-            .finally(() => {
-              // IMPORTANT: Always reset button state
-              submitBtn.innerHTML = originalBtnText;
-              submitBtn.disabled = false;
-            });
-        });
 
-        function showFeedback(message, type) {
-          let feedbackElement = contactForm.querySelector(".form-feedback");
-          if (!feedbackElement) {
-            feedbackElement = document.createElement("div");
-            feedbackElement.className = "form-feedback";
-            contactForm.appendChild(feedbackElement);
-          }
 
-          feedbackElement.innerHTML =
-            type === "success"
-              ? '<i class="fa fa-check-circle"></i> ' + message
-              : '<i class="fa fa-exclamation-circle"></i> ' + message;
+  
+  
+  
 
-          feedbackElement.className = "form-feedback " + type;
-        }
+    
 
-        function validateEmail(email) {
-          const re =
-            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(String(email).toLowerCase());
-        }
+<!-- Full-screen overlay with spinner -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- Toastify CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- Your JavaScript code here -->
+<script>
+  (function(){
+    const form = document.getElementById('email-form'); // Correctly select the form
+    const overlay = document.getElementById('loading-overlay');
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      overlay.style.display = 'flex'; // Show the loading animation
+
+      const data = {};
+      new FormData(form).forEach((v, k) => data[k] = v);
+
+      // Display a success message for a few seconds
+      const successToast = Toastify({
+        text: 'please wait...',
+        duration: 4000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "linear-gradient(to right,rgb(12, 56, 29),rgb(49, 138, 22))",
+        stopOnFocus: true
       });
-    </script>
+
+      successToast.showToast();
+
+      // Send the reservation data to the server
+      const response = await fetch("{% url 'contact_view' %}", {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': csrftoken,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(data)
+      });
+
+      const result = await response.json();
+      overlay.style.display = 'none'; // Hide the loading animation
+
+      if (result.status === 'success') {
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "green",
+        }).showToast();
+      } else {
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "red",
+        }).showToast();
+      }
+    });
+  })();
+</script>
+
   </body>
 </html>

@@ -593,8 +593,8 @@
             </style>
             <div class="location-box wow fadeInRight" data-wow-delay="3100ms">
               <div class="text">
-                Benin City <i class="icon fa fa-long-arrow-right"></i> <br />
-                Victor Uwaifo Creative Hub, Benin
+                Benin City, Edo State, Nigeria <i class="icon fa fa-long-arrow-right"></i> <br />
+              
               </div>
               <div class="btn-box">
                 <a href="{% url 'reservation' %}" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Reserve Seat</span></a>
@@ -823,7 +823,7 @@
                     </div>
                   </div>
                   <div class="info-box">
-                    <h4 class="name" style="font-size: 16px"><a>H.E SENATOR MONDAY OKPEBHOLO (GOVERNOR OF EDO STATE)</a></h4>
+                    <h4 class="name" style="font-size: 16px"><a>His Excellency <br>Senator Monday Okpebholo</a></h4>
                     <span class="designation">Chief Host</span>
                   </div>
                 </div>
@@ -850,8 +850,8 @@
                     </div>
                   </div>
                   <div class="info-box">
-                    <h4 class="name" style="font-size: 16px"><a>Hon. Ekperikpe Ekpo (MINISTER OF STATE FOR PETROLEUM)</a></h4>
-                    <span class="designation">Special Guest OF Honor</span>
+                    <h4 class="name" style="font-size: 16px"><a>Hon. <br> Ekperikpe Ekpo (Minister of State for Petroleum)</a></h4>
+                    <span class="designation">Special Guest Of Honor</span>
                   </div>
                 </div>
               </div>
@@ -877,7 +877,7 @@
                     </div>
                   </div>
                   <div class="info-box">
-                    <h4 class="name" style="font-size: 16px"><a>Engr.Bashir Ojulari (GMD/CEO,NNPC)</a></h4>
+                    <h4 class="name" style="font-size: 16px"><a>Engr. <br> Bashir Ojulari  (GCEO, NNPC , LTD)</a></h4>
                     <span class="designation">Special Guest Of Honor</span>
                   </div>
                 </div>
@@ -906,7 +906,7 @@
                     </div>
                   </div>
                   <div class="info-box">
-                    <h4 class="name" style="font-size: 16px"><a>Chijioke Uzoho (GACN)</a></h4>
+                    <h4 class="name" style="font-size: 16px"><a>Chijioke Uzoho <br>Managing Director / CEO  <br> Gas Aggregator Company Nigeria Ltd / GTE </a></h4>
                     <span class="designation">Host</span>
                   </div>
                 </div>
@@ -933,7 +933,7 @@
                     </div>
                   </div>
                   <div class="info-box">
-                    <h4 class="name" style="font-size: 16px"><a>Felix Isere, Esq (Special Adviser To Edo State Governor On Oil And Gas)</a></h4>
+                    <h4 class="name" style="font-size: 16px"><a>Felix Isere, Esq <br>Special Adviser To Edo State Governor <br> On Oil And Gas</a></h4>
                     <span class="designation">Host</span>
                   </div>
                 </div>
@@ -1043,40 +1043,40 @@
         </div>
       </section>
       <!-- End Event Section -->
+<!-- Seat Reservation Section -->
+<section id="seat-reservation-section" class="seat-reservation-section" style="background: #f9f9f9; padding: 60px 0;">
+  <div class="auto-container">
+    <div class="sec-title text-center">
+      <span class="sub-title">Reserve Your Seat</span>
+      <h2 class="text-reveal-anim" style="color:#111 !important;">Secure Your Spot at Edo Oil & Gas 2025</h2>
+      <div class="text" style="color:#111;">Fill in your details below to reserve your seat for the event.</div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 col-sm-12">
+        <form id="seat-reservation-form" method="post" class="reservation-form" autocomplete="off">
+          {% csrf_token %}
+          <div class="form-group">
+            <input type="text" name="first_name" class="form-control" placeholder="First Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+          </div>
+          <div class="form-group">
+            <input type="text" name="last_name" class="form-control" placeholder="Last Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+          </div>
+          <div class="form-group">
+            <input type="email" name="email" class="form-control" placeholder="Email Address" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+          </div>
+          <div class="form-group">
+            <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+          </div>
+          <div class="form-group text-center">
+            <button type="submit" class="theme-btn btn-style-one bg-yellow" style="color:#111;"><span class="btn-title" style="color:#111;">Reserve Seat</span></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Seat Reservation Section -->
 
-      <!-- Seat Reservation Section -->
-      <section id="seat-reservation-section" class="seat-reservation-section" style="background: #f9f9f9; padding: 60px 0;">
-        <div class="auto-container">
-          <div class="sec-title text-center">
-            <span class="sub-title">Reserve Your Seat</span>
-            <h2 class="text-reveal-anim" style="color:#111 !important;">Secure Your Spot at Edo Oil & Gas 2025</h2>
-            <div class="text" style="color:#111;">Fill in your details below to reserve your seat for the event.</div>
-          </div>
-          <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8 col-sm-12">
-              <form id="seat-reservation-form" method="post" class="reservation-form" autocomplete="off">
-                {% csrf_token %}
-                <div class="form-group">
-                  <input type="text" name="first_name" class="form-control" placeholder="First Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
-                </div>
-                <div class="form-group">
-                  <input type="text" name="last_name" class="form-control" placeholder="Last Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
-                </div>
-                <div class="form-group">
-                  <input type="email" name="email" class="form-control" placeholder="Email Address" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
-                </div>
-                <div class="form-group">
-                  <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
-                </div>
-                <div class="form-group text-center">
-                  <button type="submit" class="theme-btn btn-style-one bg-yellow" style="color:#111;"><span class="btn-title" style="color:#111;">Reserve Seat</span></button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Seat Reservation Section -->
 
       <!-- Video Section -->
       <section class="video-section parallax-section">
@@ -1188,6 +1188,11 @@
                       <li>
                         <i class="fa fa-angle-double-right"></i><a href="{% url 'contact' %}">Contact</a>
                       </li>
+                   
+                      <li>
+                        <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
+                      </li>
+                     
                     </ul>
                   </div>
                 </div>
@@ -1227,7 +1232,7 @@
           <div class="auto-container">
             <div class="inner-container">
               <div class="copyright-text">
-                © Copyright 2025 All Rights Reserved by Edo Oil and Gas Summit. | Privacy Policy| <a href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+                 Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
               </div>
             </div>
           </div>
@@ -1244,6 +1249,41 @@
       </svg>
     </div>
     <!-- back to top end -->
+
+
+    
+
+
+<style>
+  /* Full-screen overlay */
+  #loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: none; /* hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  /* Gold-topped spinner */
+  .spinner {
+    border: 8px solid rgba(255, 255, 255, 0.2);
+    border-top: 8px solid #FFD700; /* Gold */
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+</style>
+
 
 
     <script src="{% static 'js/jquery.js' %}"></script>
@@ -1264,6 +1304,80 @@
   
     <!-- Color Setting -->
     <script src="{% static 'js/color-settings.js' %}"></script>
+
+
+
+    
+
+<!-- Full-screen overlay with spinner -->
+<div id="loading-overlay">
+  <div class="spinner"></div>
+</div>
+
+<!-- Toastify CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+<!-- Your JavaScript code here -->
+<script>
+  (function(){
+    const form = document.getElementById('seat-reservation-form'); // Correctly select the form
+    const overlay = document.getElementById('loading-overlay');
+    const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
+
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      overlay.style.display = 'flex'; // Show the loading animation
+
+      const data = {};
+      new FormData(form).forEach((v, k) => data[k] = v);
+
+      // Display a success message for a few seconds
+      const successToast = Toastify({
+        text: 'please wait...',
+        duration: 4000,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "linear-gradient(to right,rgb(12, 56, 29),rgb(49, 138, 22))",
+        stopOnFocus: true
+      });
+
+      successToast.showToast();
+
+      // Send the reservation data to the server
+      const response = await fetch("{% url 'reserve_seat' %}", {
+        method: 'POST',
+        headers: {
+          'X-CSRFToken': csrftoken,
+          'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams(data)
+      });
+
+      const result = await response.json();
+      overlay.style.display = 'none'; // Hide the loading animation
+
+      if (result.status === 'success') {
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "green",
+        }).showToast();
+      } else {
+        Toastify({
+          text: result.message,
+          duration: 3000,
+          gravity: "top",
+          position: "right",
+          backgroundColor: "red",
+        }).showToast();
+      }
+    });
+  })();
+</script>
+
 
  
 

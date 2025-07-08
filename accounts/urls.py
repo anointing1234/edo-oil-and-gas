@@ -10,6 +10,8 @@ urlpatterns = [
     path('privacy_policy/',views.privacy_policy,name='privacy_policy'),
     path('reservation/',views.reservation,name='reservation'),
     path('contact/',views.contact,name='contact'),
+    path('reserve_seat/',views.reserve_seat,name='reserve_seat'),
+    path('contact_view/',views.contact_view,name='contact_view'),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
 ]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) \
