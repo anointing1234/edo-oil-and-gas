@@ -159,7 +159,11 @@ def reserve_seat(request):
             email_message.content_subtype = 'html'  # Set the email content type to HTML
             email_message.send()
 
-            return JsonResponse({'status': 'success', 'message': 'Reservation successful!'})
+            return JsonResponse({
+                        'status': 'success',
+                        'message': 'Your message has been sent. We look forward to seeing you!'
+                    })
+
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': f'Error sending email: {str(e)}'})
 
