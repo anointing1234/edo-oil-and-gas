@@ -74,6 +74,24 @@ def reserve_seat(request):
         last_name = request.POST.get('last_name')
         email = request.POST.get('email')
         phone = request.POST.get('phone')
+        occupation = request.POST.get('occupation')
+        company_name = request.POST.get('company_name')
+        company_address = request.POST.get('company_address')
+
+        # Basic validation (example)
+        if not all([first_name, last_name, email, phone]):
+            return JsonResponse({'status': 'error', 'message': 'Please fill in all required fields.'})
+
+        # Optional: save reservation to database
+        # reservation = Reservation.objects.create(
+        #     first_name=first_name,
+        #     last_name=last_name,
+        #     email=email,
+        #     phone=phone,
+        #     occupation=occupation,
+        #     company_name=company_name,
+        #     company_address=company_address
+        # )
 
         # Prepare the email content with HTML formatting
         subject = 'New Seat Reservation – Edo State Oil and Gas Summit 2025'
@@ -98,7 +116,7 @@ def reserve_seat(request):
                             <td style="padding: 8px; font-weight: bold;">Last Name:</td>
                             <td style="padding: 8px;">{last_name}</td>
                         </tr>
-                          <tr>
+                        <tr>
                             <td style="padding: 8px; font-weight: bold;">Phone:</td>
                             <td style="padding: 8px;">{phone}</td>
                         </tr>
@@ -106,7 +124,18 @@ def reserve_seat(request):
                             <td style="padding: 8px; font-weight: bold;">Email:</td>
                             <td style="padding: 8px;">{email}</td>
                         </tr>
-                      
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold;">Occupation:</td>
+                            <td style="padding: 8px;">{occupation or 'N/A'}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold;">Company Name:</td>
+                            <td style="padding: 8px;">{company_name or 'N/A'}</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px; font-weight: bold;">Company Address:</td>
+                            <td style="padding: 8px;">{company_address or 'N/A'}</td>
+                        </tr>
                     </table>
 
                     <p style="margin-top: 30px; font-size: 14px; color: #666;">
@@ -135,8 +164,6 @@ def reserve_seat(request):
             return JsonResponse({'status': 'error', 'message': f'Error sending email: {str(e)}'})
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
-
-
 
 
 
