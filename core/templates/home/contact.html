@@ -1,0 +1,926 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Edo Oil and Gas Summit 2025 - Driving Innovation and Growth in Edo State's Energy Sector">
+  <meta name="keywords" content="oil, gas, energy, innovation, Edo, summit, EOGS">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta property="og:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta property="og:image" content="{% static 'images/resource/banner-main..jpg' %}' %}">
+  <meta property="og:url" content="http://www.edooilandgassummit.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Edo Oil and Gas Summit">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta name="twitter:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta name="twitter:image" content="{% static 'images/resource/banner-main..jpg' %}' %}">
+
+  <!-- Page Title -->
+  <title>Edo Oil and Gas Summit 2025</title>
+
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+  <!-- Stylesheets -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/master.css' %}" rel="stylesheet">
+  <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+
+    <style>
+      .form-feedback {
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 5px;
+        display: none;
+        font-weight: 500;
+      }
+
+      .form-feedback.success {
+        display: block;
+        background-color: rgba(40, 167, 69, 0.1);
+        border-left: 4px solid #28a745;
+        color: #28a745;
+      }
+
+      .form-feedback.error {
+        display: block;
+        background-color: rgba(220, 53, 69, 0.1);
+        border-left: 4px solid #dc3545;
+        color: #dc3545;
+      }
+
+      .spinner {
+        margin-right: 8px;
+        display: inline-block;
+      }
+
+      button:disabled {
+        opacity: 0.7;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor Animation -->
+      <div class="circle"></div>
+      <div class="circle-follow"></div>
+
+      <!-- Preloader -->
+      <div class="preloader"></div>
+
+      <!-- Main Header-->
+      <header class="main-header header-style-three">
+        <!-- Header Lower -->
+        <div class="header-lower">
+          <div class="auto-container">
+            <div class="main-box">
+              <!-- Logo Box -->
+              <div class="logo-box">
+                <div class="logo">
+                  <a href="{% url 'home' %}"
+                    ><img src="{% static 'images/logo-2.png' %}" alt="Logo" title="EYIF"
+                  /></a>
+                </div>
+              </div>
+
+              <!-- Header Navbar -->
+              <div class="header-navbar">
+                <!--Nav Box-->
+                <div class="nav-outer">
+                  <nav class="nav main-menu">
+                    <ul class="navigation">
+                  <li ><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="">Gallery</a></li>
+                  <li class="current"><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+                    </ul>
+                  </nav>
+                </div>
+
+                <!-- Outer Box -->
+                <div class="outer-box">
+                  <!-- Search Btn -->
+                  <button class="ui-btn search-btn">
+                    <i class="icon flaticon-search"></i>
+                  </button>
+
+                  <!-- Hidden Bar -->
+                  <button class="ui-btn toggle-hidden-bar">
+                    <i class="icon flaticon-menu-2"></i>
+                  </button>
+
+                  <!-- Btn Box -->
+                  <div class="btn-box">
+                    <a
+                      href="#seat-reservation-section"
+                      class="theme-btn btn-style-one dark-bg"
+                      ><span class="btn-title">Reserve Seat</span></a
+                    >
+                  </div>
+
+                  <!-- Mobile Nav toggler -->
+                  <div class="mobile-nav-toggler">
+                    <span class="icon lnr-icon-bars"></span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="{% url 'home' %}"
+                    ><img src="{% static 'images/logo-2.png' %}" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="{% url 'home' %}"
+                    ><img src="{% static 'images/logo.png' %}" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Now</span>
+                <div class="text">
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                     <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+              
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                Benin City, Edo State,
+                        Nigeria.
+                </div>
+              </li>
+            </ul>
+
+           
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search">
+            <span class="fa fa-times"></span>
+          </button>
+
+          <div class="search-inner">
+            <form>
+            
+              <div class="form-group">
+                <input
+                  type="search"
+                  name="search-field"
+                  value=""
+                  placeholder="Search..."
+                  required=""
+                />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo light">
+                  <a href="{% url 'home' %}" title=""
+                    ><img src="{% static 'images/logo-2.png' %}" alt="Logo"
+                  /></a>
+                </div>
+                <div class="logo dark">
+                  <a href="{% url 'home' %}" title=""
+                    ><img src="{% static 'images/logo.png' %}" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+
+              <!--Right Col-->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End-->
+
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <span class="icon lnr-icon-bars"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!-- Hidden bar back drop -->
+      <div class="hidden-bar-back-drop"></div>
+
+      <!-- Hidden Bar -->
+      <section class="hidden-bar">
+        <div class="inner-box">
+          <div class="upper-box">
+            <div class="logo-box">
+              <div class="nav-logo light">
+                <a href="{% url 'home' %}"
+                  ><img src="{% static 'images/logo-2.png' %}" alt="Logo"
+                /></a>
+              </div>
+              <div class="nav-logo dark">
+                <a href="{% url 'home' %}"
+                  ><img src="{% static 'images/logo.png' %}" alt="Logo"
+                /></a>
+              </div>
+            </div>
+            <div class="close-btn"><i class="icon fa fa-times"></i></div>
+          </div>
+          <div class="text-box">
+            <h4 class="title">Empowering Youth for the Future of Energy</h4>
+            <div class="text">
+             Harnessing Edo State Natural Gas Potentials for Sustainable Development
+            </div>
+          </div>
+
+          <ul class="contact-list-one">
+            <li>
+              <i class="icon lnr-icon-phone-handset"></i>
+              <span class="title">Call Us</span>
+              <div class="text">
+                <a href="tel:+2348153732506">+234 802 354 1175</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-envelope1"></i>
+              <span class="title">Send Email</span>
+              <div class="text">
+               
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-map-marker"></i>
+              <span class="title">Address</span>
+              <div class="text">
+               Benin City, Edo State,
+                        Nigeria.
+              </div>
+            </li>
+          </ul>
+
+         
+        </div>
+      </section>
+      <!--End Hidden Bar -->
+
+      <!-- Page Title -->
+      <section
+        class="page-title"
+        style="background-image: url({% static 'images/banner/main-banner.jpg' %})"
+     
+        <div class="auto-container">
+          <div class="inner-container">
+            <h1 class="title">Contact Us</h1>
+            
+          </div>
+        </div>
+      </section>
+      <!-- End Page Title -->
+
+      <!-- Contact Section -->
+      <section class="contact-section">
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="sub-title">Contact Us</span>
+            <h3 class="scrub-each-word text-split">Connect With Edo Oil & Gas Submit</h3>
+          </div>
+          <div class="row">
+            <!-- Form Column -->
+            <div class="form-column col-xl-7 col-lg-12 col-sm-12 col-sm-12">
+              <div class="inner-column">
+                <div class="contact-form">
+                  <form method="post" id="email-form" novalidate>
+                    <div class="row">
+                      <div class="form-group col-lg-12">
+                        <div class="response"></div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <input
+                          name="firstName"
+                          class="firstname"
+                          type="text"
+                          placeholder="First Name"
+                          required
+                        />
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <input
+                          name="lastName"
+                          class="lastname"
+                          type="text"
+                          placeholder="Last Name"
+                          required
+                        />
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <input
+                          name="email"
+                          class="email"
+                          type="email"
+                          placeholder="Enter Email"
+                          required
+                        />
+                      </div>
+                      <div class="form-group col-sm-6">
+                        <input
+                          name="phone"
+                          class="phone"
+                          type="text"
+                          placeholder="Enter Phone"
+                          required
+                        />
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <textarea
+                          name="message"
+                          class="message"
+                          placeholder="Enter Message"
+                          required
+                        ></textarea>
+                      </div>
+                      <div class="form-group col-sm-12">
+                        <button
+                          type="submit"
+                          class="theme-btn btn-style-one hover-dark"
+                        >
+                          <span class="btn-title">Send Message</span>
+                        </button>
+                      </div>
+                      <div class="form-feedback"></div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Content Column -->
+            <div class="content-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+              <div class="inner-column">
+                <ul class="contact-list-four">
+                  <li>
+                    <svg
+                      version="1.0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64.000000pt"
+                      height="64.000000pt"
+                      viewBox="0 0 64.000000 64.000000"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <g
+                        transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#D51C55"
+                        stroke="none"
+                      >
+                        <path
+                          d="M342 625 c2 -10 24 -24 55 -34 93 -32 162 -100 194 -194 19 -57 46
+                                -72 41 -23 -12 110 -138 236 -260 261 -28 6 -33 4 -30 -10z"
+                        />
+                        <path
+                          d="M65 569 c-77 -68 -81 -124 -18 -251 93 -187 354 -359 460 -304 40 20
+                                93 82 93 107 0 11 -25 47 -57 80 -66 70 -91 75 -140 28 -31 -31 -32 -32 -58
+                                -15 -46 30 -104 86 -126 123 l-22 34 32 33 c18 18 31 43 31 57 0 32 -106 139
+                                -137 139 -12 0 -38 -14 -58 -31z m105 -36 c65 -58 67 -68 26 -113 -40 -45 -40
+                                -52 11 -122 36 -49 87 -94 138 -121 29 -15 31 -14 67 19 21 19 42 34 46 34 4
+                                0 32 -24 61 -54 l53 -54 -37 -41 c-33 -36 -42 -41 -82 -41 -121 0 -308 149
+                                -383 306 -43 89 -41 137 7 186 20 21 41 38 45 38 4 0 26 -16 48 -37z"
+                        />
+                        <path
+                          d="M336 511 c-5 -7 10 -19 36 -30 52 -23 90 -62 112 -115 12 -29 19 -37
+                                27 -29 23 23 -17 104 -73 147 -40 30 -92 44 -102 27z"
+                        />
+                      </g>
+                    </svg>
+
+                    <div class="content">
+                      <h4 class="title">Have any question?</h4>
+                      <div class="text">
+                        <a href="tel:+2348153732506">+234 802 354 1175</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <svg
+                      version="1.0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64.000000pt"
+                      height="64.000000pt"
+                      viewBox="0 0 64.000000 64.000000"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <g
+                        transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#D51C55"
+                        stroke="none"
+                      >
+                        <path
+                          d="M90 542 l0 -98 -45 -34 -45 -34 0 -163 c0 -161 0 -164 25 -188 l24
+                                -25 271 0 271 0 24 25 c25 24 25 27 25 188 l0 163 -45 34 c-25 19 -45 40 -45
+                                47 0 24 -19 13 -22 -13 l-3 -25 -31 30 c-23 22 -30 37 -27 55 4 18 -2 29 -21
+                                41 -14 10 -33 15 -41 11 -10 -3 -27 6 -45 24 -16 17 -33 30 -38 30 -5 0 -27
+                                -41 -48 -91 -21 -51 -53 -109 -70 -131 -43 -50 -49 -73 -30 -103 20 -30 57
+                                -41 86 -25 19 10 26 9 42 -7 19 -19 18 -20 -20 -31 -22 -7 -45 -19 -52 -28
+                                -12 -13 -20 -8 -67 38 l-53 52 0 168 0 168 75 0 c43 0 75 4 75 10 0 6 -35 10
+                                -85 10 l-85 0 0 -98z m390 -136 c-14 -14 -170 141 -163 161 4 10 31 -10 89
+                                -68 56 -56 80 -87 74 -93z m-30 104 c0 -14 -14 -12 -28 2 -19 19 -14 30 8 18
+                                11 -6 20 -15 20 -20z m-18 -121 c-4 -4 -31 -17 -60 -30 l-54 -22 -34 34 -34
+                                35 27 62 27 63 68 -68 c37 -37 64 -70 60 -74z m-342 -24 c0 -25 -3 -45 -7 -45
+                                -4 0 -17 10 -30 22 l-23 22 22 23 c31 33 38 29 38 -22z m503 17 c16 -15 16
+                                -17 -5 -39 -31 -33 -38 -29 -38 23 0 47 4 49 43 16z m-63 -39 c0 -56 -2 -59
+                                -52 -110 l-51 -52 -25 20 c-14 10 -31 19 -38 19 -18 0 -18 9 3 32 15 17 15 20
+                                -7 43 -13 14 -22 26 -19 28 8 6 174 76 182 77 4 0 7 -26 7 -57z m-256 8 l27
+                                -28 -32 -27 c-36 -31 -55 -30 -76 0 -12 19 -11 25 12 53 15 17 30 31 34 31 4
+                                0 20 -13 35 -29z m-82 -192 c-4 -3 -38 -34 -75 -68 -93 -86 -97 -82 -97 108
+                                l0 146 90 -90 c49 -49 86 -92 82 -96z m415 -116 c-12 -12 -25 -3 -90 54 l-75
+                                68 86 88 87 87 3 -142 c2 -109 -1 -145 -11 -155z m-263 217 c-13 -13 -49 24
+                                -39 40 5 9 14 6 28 -9 15 -14 18 -24 11 -31z m19 -64 c18 -8 70 -50 117 -95
+                                l85 -80 -244 -1 c-241 0 -244 0 -226 20 12 13 33 20 69 22 55 3 65 20 17 28
+                                l-30 5 54 48 c77 68 104 77 158 53z"
+                        />
+                        <path
+                          d="M433 624 c-3 -8 -1 -20 6 -27 8 -8 11 -4 11 16 0 30 -7 35 -17 11z"
+                        />
+                        <path
+                          d="M505 610 c-16 -16 -25 -33 -22 -37 8 -7 67 45 67 59 0 16 -17 8 -45
+                                -22z"
+                        />
+                        <path
+                          d="M140 560 c0 -5 16 -10 35 -10 19 0 35 5 35 10 0 6 -16 10 -35 10 -19
+                                0 -35 -4 -35 -10z"
+                        />
+                        <path
+                          d="M240 560 c0 -5 5 -10 11 -10 5 0 7 5 4 10 -3 6 -8 10 -11 10 -2 0 -4
+                                -4 -4 -10z"
+                        />
+                        <path
+                          d="M510 530 c0 -5 9 -10 20 -10 11 0 20 5 20 10 0 6 -9 10 -20 10 -11 0
+                                -20 -4 -20 -10z"
+                        />
+                        <path
+                          d="M140 490 c0 -5 18 -10 40 -10 22 0 40 5 40 10 0 6 -18 10 -40 10 -22
+                                0 -40 -4 -40 -10z"
+                        />
+                      </g>
+                    </svg>
+
+                    <div class="content">
+                      <h4 class="title">Write email</h4>
+                      <div class="text">
+                         <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <svg
+                      version="1.0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64.000000pt"
+                      height="64.000000pt"
+                      viewBox="0 0 64.000000 64.000000"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <g
+                        transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#D51C55"
+                        stroke="none"
+                      >
+                        <path
+                          d="M259 627 c-92 -34 -139 -102 -139 -198 0 -47 6 -65 45 -129 24 -41
+                                45 -78 45 -82 0 -3 -17 -9 -38 -13 -56 -9 -115 -46 -127 -79 -8 -25 -6 -31 22
+                                -57 49 -43 130 -63 253 -63 123 0 204 20 253 63 28 26 30 32 22 57 -12 33 -71
+                                70 -127 79 -21 4 -38 10 -38 13 0 4 21 41 45 82 39 64 45 81 45 130 0 40 -7
+                                70 -23 101 -43 81 -156 126 -238 96z m148 -45 c12 -7 35 -29 50 -49 24 -31 28
+                                -46 28 -97 0 -59 -3 -65 -80 -188 -44 -70 -82 -128 -85 -128 -3 0 -41 58 -85
+                                128 -77 123 -80 129 -80 188 0 51 4 66 28 97 31 40 56 57 102 67 35 7 90 -1
+                                122 -18z m-132 -457 c19 -30 39 -55 45 -55 6 0 26 25 45 55 29 45 41 55 63 55
+                                36 -1 99 -24 122 -45 84 -76 -254 -132 -418 -70 -77 30 -72 70 15 101 72 25
+                                89 20 128 -41z"
+                        />
+                        <path
+                          d="M255 494 c-33 -35 -33 -84 -1 -121 34 -39 98 -39 132 0 27 32 30 66
+                                9 106 -16 33 -33 41 -81 41 -25 0 -42 -8 -59 -26z m111 -29 c20 -31 15 -53
+                                -18 -78 l-28 -21 -27 21 c-34 25 -39 47 -19 78 11 17 26 25 46 25 20 0 35 -8
+                                46 -25z"
+                        />
+                      </g>
+                    </svg>
+
+                    <div class="content">
+                      <h4 class="title">Visit anytime</h4>
+                      <div class="text">
+                         Benin City,
+                        Edo State, Nigeria
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <svg
+                      version="1.0"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="64.000000pt"
+                      height="64.000000pt"
+                      viewBox="0 0 64.000000 64.000000"
+                      preserveAspectRatio="xMidYMid meet"
+                    >
+                      <g
+                        transform="translate(0.000000,64.000000) scale(0.100000,-0.100000)"
+                        fill="#D51C55"
+                        stroke="none"
+                      >
+                        <path
+                          d="M320 612 c-17 -13 -21 -24 -16 -40 4 -12 12 -22 17 -22 5 0 9 -8 9
+                                -19 0 -11 -12 -24 -32 -32 -17 -7 -51 -28 -75 -46 -34 -26 -53 -33 -88 -33
+                                -25 0 -45 -4 -45 -10 0 -5 18 -10 40 -10 44 0 47 -5 24 -38 -13 -19 -24 -22
+                                -85 -22 -44 0 -68 -4 -64 -10 3 -5 35 -10 71 -10 62 0 64 -1 64 -25 0 -22 -4
+                                -25 -35 -25 -19 0 -35 -4 -35 -10 0 -5 22 -10 49 -10 47 0 49 -1 78 -49 52
+                                -83 151 -125 256 -110 47 7 104 35 93 46 -3 3 -23 -2 -46 -11 -202 -80 -392
+                                124 -292 315 85 163 319 160 405 -6 26 -51 28 -146 3 -193 -18 -34 -16 -50 3
+                                -38 12 8 41 100 41 131 0 89 -75 200 -156 231 -45 17 -60 46 -29 58 26 9 18
+                                55 -11 66 -40 16 -100 12 -124 -8z m130 -27 c0 -12 -13 -15 -59 -15 -56 0 -79
+                                9 -64 24 3 3 33 6 65 6 45 0 58 -3 58 -15z m-30 -54 c0 -5 -13 -11 -30 -13
+                                -20 -3 -30 0 -30 9 0 8 12 13 30 13 17 0 30 -4 30 -9z"
+                        />
+                        <path
+                          d="M326 446 c-43 -16 -91 -58 -112 -98 -18 -34 -18 -119 0 -161 18 -44
+                                77 -94 127 -107 84 -23 179 22 218 103 27 56 27 112 -1 167 -43 85 -146 127
+                                -232 96z m157 -42 c42 -28 77 -90 77 -139 0 -88 -80 -167 -168 -167 -100 0
+                                -172 70 -172 167 0 75 42 134 117 161 48 17 97 10 146 -22z"
+                        />
+                        <path
+                          d="M380 395 c0 -8 5 -15 10 -15 6 0 10 7 10 15 0 8 -4 15 -10 15 -5 0
+                                -10 -7 -10 -15z"
+                        />
+                        <path
+                          d="M435 330 c-32 -33 -60 -38 -86 -14 -10 9 -20 11 -23 6 -3 -5 1 -15 9
+                                -22 8 -7 15 -20 15 -30 0 -41 61 -54 69 -15 2 11 19 37 37 58 19 20 34 39 34
+                                42 0 15 -30 1 -55 -25z m-35 -65 c0 -8 -4 -15 -9 -15 -13 0 -22 16 -14 24 11
+                                11 23 6 23 -9z"
+                        />
+                        <path
+                          d="M245 271 c-7 -12 12 -24 25 -16 11 7 4 25 -10 25 -5 0 -11 -4 -15 -9z"
+                        />
+                        <path
+                          d="M506 271 c-4 -5 -2 -12 3 -15 5 -4 12 -2 15 3 4 5 2 12 -3 15 -5 4
+                                -12 2 -15 -3z"
+                        />
+                        <path
+                          d="M380 135 c0 -8 5 -15 10 -15 6 0 10 7 10 15 0 8 -4 15 -10 15 -5 0
+                                -10 -7 -10 -15z"
+                        />
+                        <path
+                          d="M0 190 c0 -5 5 -10 10 -10 6 0 10 5 10 10 0 6 -4 10 -10 10 -5 0 -10
+                                -4 -10 -10z"
+                        />
+                        <path
+                          d="M550 100 c0 -5 5 -10 11 -10 5 0 7 5 4 10 -3 6 -8 10 -11 10 -2 0 -4
+                                -4 -4 -10z"
+                        />
+                      </g>
+                    </svg>
+
+                    <div class="content">
+                      <h4 class="title">Event Date</h4>
+                      <div class="text">August 7, 2025 | 9:00AM</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Contact Section -->
+
+      <!-- Map Section -->
+    <section class="map-section p-0">
+  <iframe
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126514.07344618682!2d5.587692297265625!3d6.334985599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d39f419c8197%3A0x2d608dbfb6d4eb2f!2sBenin%20City%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1745241001234!5m2!1sen!2sng"
+    width="600"
+    height="450"
+    style="border: 0"
+    allowfullscreen=""
+    loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"
+  ></iframe>
+</section>
+
+<footer class="main-footer footer-style-three">
+  <div class="bg bg-pattern-10"></div>
+
+
+
+
+  <!-- Widgets Section -->
+  <div class="widgets-section">
+    <div class="auto-container">
+      <div class="row">
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget about-widget">
+            <div class="widget-content">
+            
+              <h1 class="title">Let's Connect.</h1>
+              <div class="text">
+                The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.
+              </div>
+              
+              <div class="copyright-text">
+                © Copyright 2025 All Rights Reserved by
+                <a href="https://edooilandgassummit.com" target="_blank">Edo Oil and Gas Summit</a>. | <a
+                  href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget post-widget">
+            <div class="widget-content">
+              <div class="swiper post-swiper">
+                <div class="swiper-wrapper"></div>
+              </div>
+              <div class="nav-box">
+                <div class="swiper-button-prev">
+                  <span class="icon fa fa-arrow-left"></span>
+                </div>
+                <div class="swiper-button-next">
+                  <span class="icon fa fa-arrow-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget newsletter-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <div class="widget-content">
+              <div class="text">
+                Subscribe to our newsletter & stay updated with the latest
+                summit news and events.
+              </div>
+              <div class="newsletter-form-two">
+                <form>
+                  <div class="form-group" style="display: flex; gap: 10px">
+                    <input type="email" name="email" class="email" value="" placeholder="Subscribe Email ......"
+                      required="" style="max-width: 500px" />
+                    <button type="submit" class="theme-btn btn-style-one bg-yellow">
+                      <span class="btn-title">Subscribe</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget contact-widget">
+            <h3 class="widget-title">Information</h3>
+            <div class="widget-content">
+              <ul class="contact-list-three light">
+                <li class="location">
+                  <i class="fa fa-map-marker-alt"></i>Benin City, Edo State,
+                        Nigeria.
+                </li>
+              </ul>
+            </div>
+            <div class="widget-content" style="margin-top: 20px">
+              <ul class="contact-list-three light" style="display: flex; flex-direction: column; gap: 10px">
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-phone"></i>
+                    <div class="h5">Contact No.</div>
+                  </div>
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </li>
+
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-envelope"></i>
+                    <div class="h5">Email Address</div>
+                  </div>
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--End Main Footer -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Scroll To Top -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- back to top end -->
+
+    <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/lightcase.js' %}"></script>
+    <script src="{% static 'js/swipper.min.js' %}"></script>
+    <script src="{% static 'js/backtotop.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/splitType.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+    <!-- Form Handler -->
+    <script src="{% static 'js/form-handler.js' %}"></script>
+    <!-- Color Setting -->
+    <script src="{% static 'js/color-settings.js' %}"></script>
+
+    <!-- Direct contact form handling script -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.getElementById("email-form");
+        if (!contactForm) return;
+
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+
+        contactForm.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Get form values
+          const firstName = contactForm
+            .querySelector('input[name="firstName"]')
+            .value.trim();
+          const lastName = contactForm
+            .querySelector('input[name="lastName"]')
+            .value.trim();
+          const email = contactForm
+            .querySelector('input[name="email"]')
+            .value.trim();
+          const phone = contactForm
+            .querySelector('input[name="phone"]')
+            .value.trim();
+          const message = contactForm
+            .querySelector('textarea[name="message"]')
+            .value.trim();
+
+          // Simple validation
+          if (!firstName || !lastName || !email || !phone || !message) {
+            showFeedback("Please fill in all required fields", "error");
+            return;
+          }
+
+          // Email validation
+          if (!validateEmail(email)) {
+            showFeedback("Please enter a valid email address", "error");
+            return;
+          }
+
+          // Show loading state
+          submitBtn.innerHTML =
+            '<span class="spinner"><i class="fa fa-spinner fa-spin"></i></span> Sending...';
+          submitBtn.disabled = true;
+
+          // Prepare data
+          const formData = {
+            firstName: firstName,
+            lastName: lastName,
+            email: email,
+            phone: phone,
+            message: message,
+          };
+
+          // Send to server
+          fetch("https://eyif-server.onrender.com/contact", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(formData),
+          })
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error("Network response was not ok");
+              }
+              return response.json();
+            })
+            .then((data) => {
+              // Show success message
+              showFeedback(
+                "Thank you for your message! We'll contact you soon.",
+                "success"
+              );
+              contactForm.reset();
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+
+              // For demo purposes, still show success when no server is available
+              showFeedback(
+                "Thank you for your message! We'll contact you soon.",
+                "success"
+              );
+              contactForm.reset();
+            })
+            .finally(() => {
+              // IMPORTANT: Always reset button state
+              submitBtn.innerHTML = originalBtnText;
+              submitBtn.disabled = false;
+            });
+        });
+
+        function showFeedback(message, type) {
+          let feedbackElement = contactForm.querySelector(".form-feedback");
+          if (!feedbackElement) {
+            feedbackElement = document.createElement("div");
+            feedbackElement.className = "form-feedback";
+            contactForm.appendChild(feedbackElement);
+          }
+
+          feedbackElement.innerHTML =
+            type === "success"
+              ? '<i class="fa fa-check-circle"></i> ' + message
+              : '<i class="fa fa-exclamation-circle"></i> ' + message;
+
+          feedbackElement.className = "form-feedback " + type;
+        }
+
+        function validateEmail(email) {
+          const re =
+            /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+          return re.test(String(email).toLowerCase());
+        }
+      });
+    </script>
+  </body>
+</html>

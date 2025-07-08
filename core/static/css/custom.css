@@ -1,0 +1,132 @@
+.filter-buttons {
+  display: flex !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.filter-buttons .btn {
+  display: inline-block !important;
+  visibility: visible !important;
+  position: relative;
+  z-index: 10;
+  padding: 8px 15px;
+  font-size: 14px;
+}
+
+@media (max-width: 767px) {
+  .filter-buttons .btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    margin: 3px;
+  }
+}
+
+@media (max-width: 575px) {
+  .speakers-section .row .speaker-block {
+    width: 100%;
+    margin: 15px auto;
+  }
+}
+
+
+
+
+.feature-block-two .inner-box:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0;
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #035707 0%, #246c03 50%, #02691c 100%);
+  transition: all 500ms ease;
+}
+
+.rtl .feature-block-two .inner-box:after {
+  right: auto;
+  left: 0;
+  background: linear-gradient(to top, #018608 0%, #074d01 50%, #12a005 100%);
+}
+
+ .bg-pattern-10 {
+  background-image: url(../images/background/3.jpg);
+}
+
+
+.banner-layer {
+  width: 200px;
+  height: 180px;
+  background-image: url(../images/background/profile.png);
+}
+
+
+.speakers-section .bg:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color:#856d04;
+  opacity: 0.8;
+}
+
+
+
+
+
+.speakers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.speaker-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.first-row .speaker-block {
+  flex: 0 0 33.33%;
+  max-width: 33.33%;
+  padding: 0 15px;
+}
+
+.second-row .speaker-block {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding: 0 15px;
+}
+
+/* Ensure responsiveness for smaller screens */
+@media (max-width: 991px) {
+  .first-row .speaker-block,
+  .second-row .speaker-block {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767px) {
+  .first-row .speaker-block,
+  .second-row .speaker-block {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Preserve existing animations and styles */
+.speaker-block .inner-box {
+  transition: all 0.3s ease;
+}
+
+.speaker-block .image-box img {
+  width: 100%;
+  height: auto;
+}

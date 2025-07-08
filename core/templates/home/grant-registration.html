@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Apply for the Edo Youth Impact Forum 2025 Grant - Reimagining Edo's Future"
+    />
+    <meta
+      name="keywords"
+      content="grant, application, innovation, youth, empowerment, entrepreneurship, Edo, forum, EYIF"
+    />
+
+    <!-- Open Graph Meta Tags -->
+    <meta
+      property="og:title"
+      content="EYIF 2025 | Grant Registration | Hack the Future"
+    />
+    <meta
+      property="og:description"
+      content="Apply for the Edo Youth Impact Forum grants. Win ₦2,000,000 pre-seed funding for your innovative solution to transform Edo State."
+    />
+    <meta property="og:image" content="images/background/4.jpg" />
+    <meta
+      property="og:url"
+      content="https://edoyouthimpactforum.com/grant-registration.html"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Edo Youth Impact Forum" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="EYIF 2025 | Grant Registration | Hack the Future"
+    />
+    <meta
+      name="twitter:description"
+      content="Apply for the Edo Youth Impact Forum grants. Win ₦2,000,000 pre-seed funding for your innovative solution to transform Edo State."
+    />
+    <meta name="twitter:image" content="images/background/4.jpg" />
+
+    <!-- Page Title -->
+    <title>EYIF 2025 | Grant Registration</title>
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+    <!-- Stylesheets -->
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/master.css" rel="stylesheet" />
+    <link href="css/color-switcher-design.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+
+    <style>
+      .category-card {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      .category-card.active {
+        border-color: #ffc000;
+        background-color: rgba(255, 192, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      .category-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      .category-card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+      }
+      .radio-input {
+        position: absolute;
+        opacity: 0;
+      }
+      .radio-indicator {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 22px;
+        width: 22px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+      }
+      .category-card.active .radio-indicator {
+        border-color: #ffc000;
+      }
+      .category-card.active .radio-indicator:after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: 3px;
+        left: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffc000;
+      }
+      .grant-info-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #ffc000;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .grant-info-box h4 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+      .grant-info-box ul {
+        padding-left: 20px;
+      }
+      .grant-info-box ul li {
+        margin-bottom: 8px;
+      }
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      .timeline:before {
+        content: "";
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+      .timeline-item {
+        text-align: center;
+        flex: 1;
+        position: relative;
+        z-index: 2;
+      }
+      .timeline-item:not(:last-child):after {
+        display: none;
+      }
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        background-color: #ffc000;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        position: relative;
+        z-index: 2;
+      }
+      .timeline-date {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .timeline-label {
+        font-size: 12px;
+        color: #666;
+      }
+      .page-banner .content-box .title {
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+      .page-banner .content-box .title br {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+      @media (max-width: 767px) {
+        .page-banner .content-box .title {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+        .page-banner {
+          padding-top: 8rem !important;
+          padding-bottom: 3rem !important;
+        }
+        .page-banner .content-box {
+          margin-bottom: 0;
+        }
+      }
+    </style>
+    <style>
+      .registration-closed-section {
+        background-color: #111827;
+        padding: 20rem 20px;
+        color: #ffffff;
+      }
+
+      .registration-closed-section .closed-box {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 50px 30px;
+        background: #1f2937;
+        border-radius: 12px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .registration-closed-section .closed-title {
+        font-size: 32px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #facc15; /* amber yellow */
+      }
+
+      .registration-closed-section .closed-message {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #d1d5db;
+      }
+
+      @media (max-width: 768px) {
+        .registration-closed-section .closed-title {
+          font-size: 26px;
+        }
+        .registration-closed-section .closed-message {
+          font-size: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor Animation -->
+      <div class="circle"></div>
+      <div class="circle-follow"></div>
+
+      <!-- Preloader -->
+      <div class="preloader"></div>
+
+      <!-- Main Header-->
+      <header class="main-header header-style-one">
+        <!-- Header Main Box -->
+        <div class="auto-container">
+          <div class="main-box">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="index.html"
+                  ><img src="images/logo.png" alt="Logo" title="EYIF"
+                /></a>
+              </div>
+            </div>
+
+            <div class="header-navbar">
+              <!--Nav Box-->
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li class="current">
+                      <a href="grant-registration.html">Grants</a>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Main Menu End-->
+
+              <!-- Outer Box -->
+              <div class="outer-box">
+                <!-- Hidden Bar -->
+                <button class="ui-btn toggle-hidden-bar">
+                  <i class="icon flaticon-menu-2"></i>
+                </button>
+
+                <!-- Btn Box -->
+                <div class="btn-box">
+                  <a
+                    href="#seat-reservation-section"
+                    class="theme-btn btn-style-one light-bg"
+                    ><span class="btn-title">Register Now</span></a
+                  >
+                </div>
+
+                <!-- Mobile Nav toggler -->
+                <div class="mobile-nav-toggler"><i class="fa fa-bars"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="index.html"
+                    ><img src="images/logo-2.png" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="index.html"
+                    ><img src="images/logo.png" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348153732506">+234 815 373 2506</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="/cdn-cgi/l/email-protection#d0b9beb6bf90b5b4bfa3a9bfa5a4b8b9bda0b1b3a4b6bfa2a5bdfeb3bfbd"><span class="__cf_email__" data-cfemail="2e474048416e4b4a415d57415b5a4647435e4f4d5a48415c5b43004d4143">[email&#160;protected]</span></a
+                  >
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                  Victor Uwaifo Creative Hub, Benin City, Edo State
+                </div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- Hidden bar back drop -->
+        <div class="hidden-bar-back-drop"></div>
+
+        <!-- Hidden Bar -->
+        <section class="hidden-bar">
+          <div class="inner-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="index.html"
+                    ><img src="images/logo-2.png" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="index.html"
+                    ><img src="images/logo.png" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <div class="text-box">
+              <h4 class="title">Empowering Youth for a Transformed Future</h4>
+              <div class="text">
+                The Edo Youth Impact Forum (EYIF) is designed to inspire and
+                equip young people with practical skills, entrepreneurial
+                thinking, and civic awareness. Join us to be part of this
+                transformative movement.
+              </div>
+            </div>
+
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348153732506">+234 815 373 2506</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="/cdn-cgi/l/email-protection#89e0e7efe6c9ecede6faf0e6fcfde1e0e4f9e8eafdefe6fbfce4a7eae6e4"><span class="__cf_email__" data-cfemail="c4adaaa2ab84a1a0abb7bdabb1b0acada9b4a5a7b0a2abb6b1a9eaa7aba9">[email&#160;protected]</span></a
+                  >
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                  Victor Uwaifo Creative Hub, <br />
+                  Benin City, Edo State.
+                </div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </li>
+              <li>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </li>
+            </ul>
+          </div>
+        </section>
+        <!--End Hidden Bar -->
+
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search">
+            <span class="fa fa-times"></span>
+          </button>
+
+          <div class="search-inner">
+            <form method="post" action="#">
+              <div class="form-group">
+                <input
+                  type="search"
+                  name="search-field"
+                  value=""
+                  placeholder="Search..."
+                  required=""
+                />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo light">
+                  <a href="index.html" title=""
+                    ><img src="images/logo-2.png" alt="Logo"
+                  /></a>
+                </div>
+                <div class="logo dark">
+                  <a href="index.html" title=""
+                    ><img src="images/logo.png" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+
+              <!--Right Col-->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End-->
+
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!-- Registration Closed Section -->
+      <section class="registration-closed-section">
+        <div class="auto-container">
+          <div class="closed-box text-center">
+            <h2 class="closed-title">🎉 Registration Closed</h2>
+            <p class="closed-message">
+              Thank you for your interest in the grant application.<br />
+              The registration period ended on
+              <strong style="color: rgb(25, 198, 246)">June 21st, 2025</strong>.<br />
+              Stay tuned for updates and future opportunities!
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Footer -->
+      <footer class="main-footer footer-style-three">
+        <div class="bg bg-pattern-10"></div>
+        <div class="icon-fourteen bounce-x"></div>
+        <div class="icon-fifteen"></div>
+        <div class="icon-sixteen"></div>
+
+        <!-- Widgets Section -->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="row">
+              <!-- Footer Column -->
+              <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+                <div class="footer-widget about-widget">
+                  <div class="widget-content">
+                    <div class="icon-star"></div>
+                    <h1 class="title">Let's Connect.</h1>
+                    <div class="text">
+                      The Edo Youth Impact Forum (EYIF) is a platform designed
+                      to inspire, equip, and empower young people with practical
+                      skills, entrepreneurial thinking, and civic awareness for
+                      a transformed future.
+                    </div>
+                    <ul class="social-icon-two light">
+                      <li>
+                        <a
+                          href="https://x.com/edoyif?t=G2teLxeB8QG3la5JNJXrLw&s=09"
+                          ><i class="fab fa-twitter"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a
+                          href="https://www.instagram.com/edoyif?igsh=M2cwOHh4c295cnpt"
+                          ><i class="fab fa-instagram"></i
+                        ></a>
+                      </li>
+                    </ul>
+                    <div class="copyright-text">
+                      © Copyright 2025 All Rights Reserved by
+                      <a href="https://edoyouthimpactforum.com" target="_blank"
+                        >Edo Youth Impact Forum</a
+                      >. |
+                      <a
+                        href="privacy-policy.html"
+                        style="color: #ffc000; text-decoration: none"
+                        >Privacy Policy</a
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer COlumn -->
+              <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+                <div class="footer-widget post-widget">
+                  <div class="widget-content">
+                    <div class="swiper post-swiper">
+                      <div class="swiper-wrapper"></div>
+                    </div>
+                    <div class="nav-box">
+                      <div class="swiper-button-prev">
+                        <span class="icon fa fa-arrow-left"></span>
+                      </div>
+                      <div class="swiper-button-next">
+                        <span class="icon fa fa-arrow-right"></span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-widget newsletter-widget">
+                  <h3 class="widget-title">Newsletter</h3>
+                  <div class="widget-content">
+                    <div class="text">
+                      Subscribe to our newsletter & keep up with all the latest
+                      events.
+                    </div>
+                    <div class="newsletter-form-two">
+                      <form>
+                        <div
+                          class="form-group"
+                          style="display: flex; gap: 10px"
+                        >
+                          <input
+                            type="email"
+                            name="email"
+                            class="email"
+                            value=""
+                            placeholder="Subscribe Email ......"
+                            required=""
+                          />
+                          <button
+                            type="submit"
+                            class="theme-btn btn-style-one bg-yellow"
+                          >
+                            <span class="btn-title">Subscribe</span>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="footer-widget contact-widget">
+                  <h3 class="widget-title">Information</h3>
+                  <div class="widget-content">
+                    <ul class="contact-list-three light">
+                      <li class="location">
+                        <i class="fa fa-map-marker-alt"></i> Benin City, Edo State,
+                        Nigeria.
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="widget-content" style="margin-top: 20px">
+                    <ul
+                      class="contact-list-three light"
+                      style="display: flex; flex-direction: column; gap: 10px"
+                    >
+                      <li>
+                        <div class="icon-box">
+                          <i class="fa fa-phone"></i>
+                          <div class="h5">Contact No.</div>
+                        </div>
+                        <a href="tel:+2348153732506">+234 815 373 2506</a>
+                      </li>
+
+                      <li>
+                        <div class="icon-box">
+                          <i class="fa fa-envelope"></i>
+                          <div class="h5">Email Address</div>
+                        </div>
+                        <a href="/cdn-cgi/l/email-protection#1970777f76597c7d766a60766c6d71707469787a6d7f766b6c74377a7674"><span class="__cf_email__" data-cfemail="9af3f4fcf5dafffef5e9e3f5efeef2f3f7eafbf9eefcf5e8eff7b4f9f5f7">[email&#160;protected]</span></a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--End Main Footer -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Back To Top Start -->
+    <div class="progress-wrap">
+      <svg
+        class="progress-circle svg-content"
+        width="100%"
+        height="100%"
+        viewBox="-1 -1 102 102"
+      >
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- back to top end -->
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.fancybox.js"></script>
+    <script src="js/jquery.countdown.js"></script>
+    <script src="js/wow.js"></script>
+    <script src="js/appear.js"></script>
+    <script src="js/lightcase.js"></script>
+    <script src="js/swipper.min.js"></script>
+    <script src="js/backtotop.js"></script>
+    <script src="js/gsap.min.js"></script>
+    <script src="js/ScrollTrigger.min.js"></script>
+    <script src="js/splitType.js"></script>
+    <script src="js/SplitText.min.js"></script>
+    <script src="js/script.js"></script>
+    <!-- Form Handler -->
+    <!-- <script src="js/form-handler.js"></script> -->
+    <!-- Color Setting -->
+    <script src="js/color-settings.js"></script>
+  </body>
+</html>

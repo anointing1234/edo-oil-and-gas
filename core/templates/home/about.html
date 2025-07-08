@@ -1,0 +1,1008 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Edo Oil and Gas Summit 2025 - Driving Innovation and Growth in Edo State's Energy Sector">
+  <meta name="keywords" content="oil, gas, energy, innovation, Edo, summit, EOGS">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta property="og:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta property="og:image" content="{% static 'images/resource/banner-main.jpg' %}">
+  <meta property="og:url" content="http://www.edooilandgassummit.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Edo Oil and Gas Summit">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta name="twitter:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta name="twitter:image" content="{% static 'images/resource/banner-main.jpg' %}">
+
+  <!-- Page Title -->
+  <title>Edo Oil and Gas Summit 2025</title>
+
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+  <!-- Stylesheets -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/master.css' %}" rel="stylesheet">
+  <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page-wrapper">
+    <!-- Cursor Animation -->
+    <div class="circle"></div>
+    <div class="circle-follow"></div>
+
+    <!-- Preloader -->
+    <div class="preloader"></div>
+
+    <!-- Main Header-->
+    <header class="main-header header-style-three">
+      <!-- Header Lower -->
+      <div class="header-lower">
+        <div class="auto-container">
+          <div class="main-box">
+            <!-- Logo Box -->
+            <div class="logo-box">
+              <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" title="EYIF" /></a>
+              </div>
+            </div>
+
+            <!-- Header Navbar -->
+            <div class="header-navbar">
+              <!--Nav Box-->
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                  <li ><a href="{% url 'home' %}">Home</a></li>
+                  <li class="current"><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="">Gallery</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+                </nav>
+              </div>
+
+              <!-- Outer Box -->
+              <div class="outer-box">
+                <!-- Search Btn -->
+                <button class="ui-btn search-btn">
+                  <i class="icon flaticon-search"></i>
+                </button>
+
+                <!-- Hidden Bar -->
+                <button class="ui-btn toggle-hidden-bar">
+                  <i class="icon flaticon-menu-2"></i>
+                </button>
+
+                <!-- Btn Box -->
+                <div class="btn-box">
+                  <a href="#seat-reservation-section" class="theme-btn btn-style-one dark-bg"><span
+                      class="btn-title">Reserve Seat</span></a>
+                </div>
+
+                <!-- Mobile Nav toggler -->
+                <div class="mobile-nav-toggler">
+                  <span class="icon lnr-icon-bars"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile Menu  -->
+      <div class="mobile-menu">
+        <div class="menu-backdrop"></div>
+
+        <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+        <nav class="menu-box">
+          <div class="upper-box">
+            <div class="logo-box">
+              <div class="nav-logo light">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+              </div>
+              <div class="nav-logo dark">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+              </div>
+            </div>
+            <div class="close-btn"><i class="icon fa fa-times"></i></div>
+          </div>
+
+          <ul class="navigation clearfix">
+            <!--Keep This Empty / Menu will come through Javascript-->
+          </ul>
+          <ul class="contact-list-one">
+            <li>
+              <i class="icon lnr-icon-phone-handset"></i>
+              <span class="title">Call Now</span>
+              <div class="text">
+                <a href="tel:+2348153732506">+234 802 354 1175</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-envelope1"></i>
+              <span class="title">Send Email</span>
+              <div class="text">
+    <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-map-marker"></i>
+              <span class="title">Address</span>
+              <div class="text">
+               Benin City, Edo State,
+                        Nigeria.
+              </div>
+            </li>
+          </ul>
+
+          <ul class="social-links">
+            <li>
+              <a href="{% url 'about' %}#"><i class="fab fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}#"><i class="fab fa-facebook-f"></i></a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}#"><i class="fab fa-pinterest"></i></a>
+            </li>
+            <li>
+              <a href="{% url 'about' %}#"><i class="fab fa-instagram"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- End Mobile Menu -->
+
+      <!-- Header Search -->
+      <div class="search-popup">
+        <span class="search-back-drop"></span>
+        <button class="close-search">
+          <span class="fa fa-times"></span>
+        </button>
+
+        <div class="search-inner">
+          <form >
+            <div class="form-group">
+              <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+              <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- End Header Search -->
+
+      <!-- Sticky Header  -->
+      <div class="sticky-header">
+        <div class="auto-container">
+          <div class="inner-container">
+            <!--Logo-->
+            <div class="logo-box">
+              <div class="logo light">
+                <a href="{% url 'home' %}" title=""><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+              </div>
+              <div class="logo dark">
+                <a href="{% url 'home' %}" title=""><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+              </div>
+            </div>
+
+            <!--Right Col-->
+            <div class="nav-outer">
+              <!-- Main Menu -->
+              <nav class="main-menu">
+                <div class="navbar-collapse show collapse clearfix">
+                  <ul class="navigation clearfix">
+                    <!--Keep This Empty / Menu will come through Javascript-->
+                  </ul>
+                </div>
+              </nav>
+              <!-- Main Menu End-->
+
+              <!--Mobile Navigation Toggler-->
+              <div class="mobile-nav-toggler">
+                <span class="icon lnr-icon-bars"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Sticky Menu -->
+    </header>
+    <!--End Main Header -->
+
+    <!-- Hidden bar back drop -->
+    <div class="hidden-bar-back-drop"></div>
+
+    <!-- Hidden Bar -->
+    <section class="hidden-bar">
+      <div class="inner-box">
+        <div class="upper-box">
+          <div class="logo-box">
+            <div class="nav-logo light">
+              <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+            </div>
+            <div class="nav-logo dark">
+              <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+            </div>
+          </div>
+          <div class="close-btn"><i class="icon fa fa-times"></i></div>
+        </div>
+
+
+        <div class="text-box">
+          <h4 class="title">Energy Transition in Nigeria</h4>
+          <div class="text">
+            Harnessing Edo State Natural Gas Potentials for Sustainable Development
+          </div>
+        </div>
+        <ul class="contact-list-one">
+          <li>
+            <i class="icon lnr-icon-phone-handset"></i>
+            <span class="title">Call Us</span>
+            <div class="text">
+              <a href="tel:+2348153732506">+234 802 354 1175</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-envelope1"></i>
+            <span class="title">Send Email</span>
+            <div class="text">
+               <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-map-marker"></i>
+            <span class="title">Address</span>
+            <div class="text">
+              Benin City, Edo State. Nigeria
+            </div>
+          </li>
+        </ul>
+
+       
+      </div>
+    </section>
+    <!--End Hidden Bar -->
+
+    <!-- Page Title -->
+    <section class="page-title" style="background-image: url({% static 'images/banner/main-banner.jpg' %})">
+     
+      <div class="auto-container">
+        <div class="inner-container">
+          <h1 class="title">About Edo Oil and Gas Summit 2025</h1>
+          
+        </div>
+      </div>
+    </section>
+    <!-- End Page Title -->
+
+
+    <!-- About Section -->
+    <section class="about-section">
+      <div class="icon-two bounce-y"></div>
+      <div class="auto-container">
+        <div class="outer-box two">
+          <div class="content-box wow fadeInRight" data-wow-delay="200ms">
+            <div class="sec-title">
+              <span class="sub-title">About Edo Oil and Gas Summit 2025</span>
+              <div>
+                <h3 class="scrub-each-word text-split "> Driving Nigeria's <br />
+                  Energy Future</h3>
+              </div>
+              <div class="text-dark text-anim">
+                The Edo Oil and Gas Summit 2025 is a pivotal platform uniting industry leaders, policymakers, and
+                innovators to harness Edo State's natural gas potential for sustainable development. More than an event,
+                it is a catalyst for collaboration, innovation, and economic growth, positioning Edo State as a leader
+                in Nigeria’s energy transition. Join us to shape a sustainable and prosperous energy future.
+              </div>
+            </div>
+            <div class="btn-box">
+              <a href="{% url 'reservation' %}" class="theme-btn btn-style-one icon-btn bg-yellow"><i
+                  class="icon flaticon-speech"></i><span class="btn-title">Register Now</span></a>
+              <a href="{% url 'contact' %}" class="theme-btn btn-style-one icon-btn"><i
+                  class="icon flaticon-placeholder"></i><span class="btn-title">Location</span></a>
+            </div>
+          </div>
+        </div>
+        <div class="outer-box show-xl">
+          <div class="image-box wow fadeInUp">
+            <figure class="image">
+              <img src="{% static 'images/resource/banner-main.jpg' %}" alt="Edo Oil and Gas Summit" />
+            </figure>
+            <div class="speaker-box">
+              <i class="icon flaticon-gas-pump"></i>
+              <div class="count">15+</div>
+              <div class="text">
+                Industry <br />
+                Experts
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End About Section -->
+
+    <!-- Marquee Section -->
+    <div class="marquee-section">
+      <div class="marquee-container">
+        <div class="marquee">
+          <div class="text">Sustainability</div>
+          <div class="text">*</div>
+          <div class="text">Innovation</div>
+          <div class="text">*</div>
+          <div class="text">Energy Transition</div>
+          <div class="text">*</div>
+          <div class="text">Collaboration</div>
+          <div class="text">*</div>
+          <div class="text">Economic Growth</div>
+          <div class="text">*</div>
+          <div class="text">Natural Gas</div>
+          <div class="text">*</div>
+          <div class="text">Sustainability</div>
+          <div class="text">*</div>
+          <div class="text">Innovation</div>
+          <div class="text">*</div>
+          <div class="text">Energy Transition</div>
+          <div class="text">*</div>
+          <div class="text">Collaboration</div>
+          <div class="text">*</div>
+          <div class="text">Economic Growth</div>
+          <div class="text">*</div>
+          <div class="text">Natural Gas</div>
+          <div class="text">*</div>
+        </div>
+      </div>
+    </div>
+    <!-- End Marquee Section -->
+
+    <!-- Legacy Section -->
+    <section class="feature-section-two" style="
+    background-color: #f9f9f9;
+    padding-top: 80px;
+    padding-bottom: 60px;
+  ">
+      <div class="auto-container">
+        <div class="row">
+          <!-- Content Column -->
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="sec-title">
+              <span class="sub-title">Our Heritage</span>
+              <h3 class="scrub-each-word text-split ">
+                The Legacy of Edo's Energy Sector
+              </h3>
+              <div class="text text-anim " style="margin-top: 20px">
+                <p style="color: black;">
+                  Edo State has a rich history of contributing to Nigeria's energy landscape, with its abundant natural
+                  gas resources driving economic and industrial growth. From the early days of oil and gas exploration
+                  to modern advancements in sustainable energy, Edo has been a hub of innovation and resilience in the
+                  energy sector.
+                </p>
+                <p style="margin-top: 15px; color: black;">
+                  Today, Edo continues to lead with initiatives that harness natural gas for sustainable development,
+                  fostering economic prosperity and environmental stewardship across Nigeria and beyond.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Image Column -->
+          <div class="col-xl-6 col-lg-6 col-md-12">
+            <div class="image-box wow fadeInRight" data-wow-delay="200ms" style="
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+          ">
+              <img src="{% static 'images/resource/about1-2.jpg' %}" alt="Legacy of Edo Energy Sector" style="width: 100%" />
+              <div style="
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              background: rgba(0, 0, 0, 0.7);
+              padding: 20px;
+              color: white;
+            ">
+                <h4 class="text-white">
+                  From Resource Wealth to Sustainable Energy
+                </h4>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Legacy Section -->
+
+    <!-- Countdown Section -->
+    <section class="countdown-section">
+      <div class="bg-pattern-2"></div>
+      <div class="auto-container">
+        <div class="outer-box">
+          <div class="row">
+            <!-- Title Box -->
+            <div class="title-box col-xl-4 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
+              <div class="sec-title light mb-0">
+                <span class="sub-title">Countdown</span>
+                <h2 class="scrub-each-word text-split">
+                  Edo Oil and Gas Summit 2025 is Coming Soon
+                </h2>
+              </div>
+            </div>
+
+            <!-- Time Counter -->
+            <div class="timer-column col-xl-4 col-lg-12 col-md-12 col-sm-12 wow fadeInUp" data-wow-delay="200ms">
+             <div class="time-counter">
+  <div class="time-countdown" data-countdown="08/07/2025">
+    <div class="counter-box">
+      <span class="days">00</span>
+      <span class="label">Days</span>
+    </div>
+    <div class="counter-box">
+      <span class="hours">00</span>
+      <span class="label">Hours</span>
+    </div>
+    <div class="counter-box">
+      <span class="minutes">00</span>
+      <span class="label">Minutes</span>
+    </div>
+    <div class="counter-box">
+      <span class="seconds">00</span>
+      <span class="label">Seconds</span>
+    </div>
+  </div>
+</div>
+            </div>
+
+            <div class="btn-box col-xl-4 col-lg-12 col-md-12 col-sm-12">
+              <a href="{% url 'reservation' %}" class="theme-btn btn-style-one bg-blue"><span
+                  class="btn-title">Register
+                  Now</span></a>
+            </div>
+          </div>
+
+          <figure class="image reveal bounce-x">
+            <img src="{% static 'images/resource/energy.png' %}" style="margin-right: -100px" alt="Energy Image" />
+          </figure>
+        </div>
+      </div>
+    </section>
+    <!-- End Countdown Section -->
+
+    <!-- Governor Section -->
+    <section class="feature-section-two governor-section"
+      style="background-color: #fff; padding-top: 80px; padding-bottom: 60px">
+      <div class="auto-container">
+        <div class="row">
+          <!-- Image Column -->
+          <div class="col-xl-5 col-lg-5 col-md-12">
+            <div class="image-box wow fadeInLeft" data-wow-delay="200ms" style="
+              position: relative;
+              padding: 20px;
+              border-radius: 15px;
+              box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            ">
+              <img src="{% static 'images/resource/1.jpg' %}" alt="Governor Monday Okpebholo"
+                style="width: 100%; border-radius: 10px" />
+            </div>
+          </div>
+
+          <!-- Content Column -->
+          <div class="col-xl-7 col-lg-7 col-md-12">
+            <div class="sec-title">
+              <span class="sub-title">New Leadership</span>
+              <h3 class="scrub-each-word text-split">
+                A New Era Under Governor Monday Okpebholo
+              </h3>
+              <div class="text text-anim" style="margin-top: 20px">
+                <p>
+                  Under the visionary leadership of His Excellency, Governor Monday
+                  Okpebholo, Edo State is poised to lead Nigeria’s energy transition.
+                  Governor Okpebholo is committed to harnessing the state’s natural
+                  gas resources to drive sustainable development and economic growth.
+                </p>
+                <p style="margin-top: 15px">
+                  The administration prioritizes collaboration with industry leaders,
+                  innovation in clean energy solutions, and investment in sustainable
+                  infrastructure. By fostering partnerships and promoting policies that
+                  support energy security and environmental stewardship, Governor
+                  Okpebholo is positioning Edo State as a beacon of progress in Nigeria’s
+                  energy sector.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Governor Section -->
+    <!-- Federal Vision Section -->
+    <section class="feature-section-two federal-vision-section" style="
+      background-color: #f5f5f5;
+      padding-top: 80px;
+      padding-bottom: 60px;
+    ">
+      <div class="auto-container">
+        <div class="row">
+          <!-- Content Column -->
+          <div class="col-xl-12 col-lg-12 col-md-12 text-center">
+            <div class="sec-title">
+              <span class="sub-title">National Agenda</span>
+              <h3 class="scrub-each-word text-split">
+                Aligning with the Federal Vision
+              </h3>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-xl-8 col-lg-10 col-md-12 mx-auto">
+            <div class="text text-center">
+              <p style="color: black;">
+                The Edo Oil and Gas Summit 2025 aligns with President Bola Ahmed Tinubu’s Renewed Hope Agenda, which
+                prioritizes sustainable energy, economic diversification, and innovation. This summit supports the
+                national vision of leveraging natural gas to drive Nigeria’s energy transition and economic growth.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 40px">
+          <!-- Federal Program Block -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="feature-block-two has-active wow fadeInUp federal-program-block" style="min-height: 250px">
+              <div class="inner-box active">
+                <div class="icon-box">
+                  <i class="icon flaticon-gas-pump"></i>
+                  <div class="icon-seven"></div>
+                  <div class="icon-eight"></div>
+                </div>
+                <div class="content">
+                  <h5 class="title">Energy Transition Fund</h5>
+                  <div class="text">
+                    Supporting investments in clean energy projects to accelerate Nigeria’s transition to sustainable
+                    energy sources.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Federal Program Block -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="feature-block-two has-active wow fadeInUp federal-program-block" data-wow-delay="200ms"
+              style="min-height: 250px">
+              <div class="inner-box">
+                <div class="icon-box">
+                  <i class="icon flaticon-innovation"></i>
+                  <div class="icon-seven"></div>
+                  <div class="icon-eight"></div>
+                </div>
+                <div class="content">
+                  <h5 class="title">Green Technology Innovation</h5>
+                  <div class="text">
+                    Promoting research and development in green technologies to enhance energy efficiency and
+                    sustainability.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Federal Program Block -->
+          <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+            <div class="feature-block-two has-active wow fadeInUp federal-program-block" data-wow-delay="400ms"
+              style="min-height: 250px">
+              <div class="inner-box">
+                <div class="icon-box">
+                  <i class="icon flaticon-collaboration"></i>
+                  <div class="icon-seven"></div>
+                  <div class="icon-eight"></div>
+                </div>
+                <div class="content">
+                  <h5 class="title">Public-Private Partnerships</h5>
+                  <div class="text">
+                    Fostering collaborations to drive investment and infrastructure development in the energy sector.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row" style="margin-top: 30px">
+          <div class="col-xl-8 col-lg-10 col-md-12 mx-auto">
+            <div class="text text-center">
+              <p style="color: black;">
+                Together, these initiatives reflect a shared commitment to harnessing Nigeria’s natural gas resources
+                for sustainable development, economic prosperity, and a cleaner energy future.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Federal Vision Section -->
+
+
+    <!-- Why Conference Matters Section -->
+<section class="feature-section-two why-conference-matters-section"
+  style="background-color: #fff; padding-top: 80px; padding-bottom: 80px">
+  <div class="auto-container">
+    <div class="row">
+      <!-- Content Column -->
+      <div class="col-xl-12 col-lg-12 col-md-12">
+        <div class="sec-title text-center">
+          <span class="sub-title">Impact & Purpose</span>
+          <h3 class="scrub-each-word text-split">
+            Why the Edo Oil and Gas Summit 2025 Matters
+          </h3>
+          <div class="text text-anim" style="
+                margin-top: 20px;
+                max-width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+              ">
+            <p>
+              Edo State is a key player in Nigeria’s energy sector, with vast natural gas resources that hold the potential to drive sustainable development. The summit addresses critical challenges: energy transition, economic diversification, and the need for collaborative platforms to innovate and invest in a cleaner energy future.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top: 50px">
+      <!-- Conference Purpose Block -->
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+        <div class="feature-block wow fadeInUp conference-purpose-block" style="
+              min-height: 250px;
+              text-align: center;
+              padding: 30px 20px;
+              border-radius: 10px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            ">
+          <div class="inner-box">
+            <div style="font-size: 48px; color: #1a4d8c; margin-bottom: 20px">
+              <i class="icon flaticon-gas-pump"></i>
+            </div>
+            <div class="content">
+              <h5 class="title" style="margin-bottom: 15px">
+                Energy Collaboration
+              </h5>
+              <div class="text">
+                A platform to unite policymakers, industry leaders, and stakeholders for sustainable energy solutions.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conference Purpose Block -->
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+        <div class="feature-block wow fadeInUp conference-purpose-block" data-wow-delay="200ms" style="
+              min-height: 250px;
+              text-align: center;
+              padding: 30px 20px;
+              border-radius: 10px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            ">
+          <div class="inner-box">
+            <div style="font-size: 48px; color: #1a4d8c; margin-bottom: 20px">
+              <i class="icon flaticon-innovation"></i>
+            </div>
+            <div class="content">
+              <h5 class="title" style="margin-bottom: 15px">
+                Innovation Showcase
+              </h5>
+              <div class="text">
+                A forum to highlight cutting-edge technologies and startups driving the energy transition.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conference Purpose Block -->
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+        <div class="feature-block wow fadeInUp conference-purpose-block" data-wow-delay="400ms" style="
+              min-height: 250px;
+              text-align: center;
+              padding: 30px 20px;
+              border-radius: 10px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            ">
+          <div class="inner-box">
+            <div style="font-size: 48px; color: #1a4d8c; margin-bottom: 20px">
+              <i class="icon flaticon-collaboration"></i>
+            </div>
+            <div class="content">
+              <h5 class="title" style="margin-bottom: 15px">
+                Call to Action
+              </h5>
+              <div class="text">
+                A call to action to build partnerships for sustainable energy and economic growth.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Conference Purpose Block -->
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12">
+        <div class="feature-block wow fadeInUp conference-purpose-block" data-wow-delay="600ms" style="
+              min-height: 250px;
+              text-align: center;
+              padding: 30px 20px;
+              border-radius: 10px;
+              box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+              transition: all 0.3s ease;
+            ">
+          <div class="inner-box">
+            <div style="font-size: 48px; color: #1a4d8c; margin-bottom: 20px">
+              <i class="icon flaticon-sustainability"></i>
+            </div>
+            <div class="content">
+              <h5 class="title" style="margin-bottom: 15px">
+                Sustainability Platform
+              </h5>
+              <div class="text">
+                A platform to position Edo State as a leader in sustainable energy development.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mission Statement -->
+ 
+  </div>
+</section>
+<!-- End Why Conference Matters Section -->
+
+<!-- Feature Section -->
+<section class="feature-section-two">
+  <div class="auto-container">
+    <div class="row">
+      <!-- Blocks Box -->
+      <div class="blocks-box col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <div class="sec-title orange">
+          <span class="sub-title">Event Objectives</span>
+          <h3 class="scrub-each-word text-split">
+            Advancing Nigeria's Energy Transition
+          </h3>
+        </div>
+
+        <!-- Feature Block Two -->
+        <div class="feature-block-two has-active wow fadeInUp">
+          <div class="inner-box">
+            <div class="icon-box">
+              <i class="icon flaticon-gas-pump"></i>
+              <div class="icon-seven"></div>
+              <div class="icon-eight"></div>
+            </div>
+            <div class="content">
+              <h5 class="title">Resource Optimization</h5>
+              <div class="text">
+                Explore strategies to maximize Edo State's natural gas potential for sustainable energy solutions.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Block Two -->
+        <div class="feature-block-two has-active wow fadeInUp">
+          <div class="inner-box">
+            <div class="icon-box">
+              <i class="icon flaticon-innovation"></i>
+              <div class="icon-seven"></div>
+              <div class="icon-eight"></div>
+            </div>
+            <div class="content">
+              <h5 class="title">Technological Innovation</h5>
+              <div class="text">
+                Showcase cutting-edge technologies driving the transition to cleaner energy in Nigeria.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Blocks Box -->
+      <div class="blocks-box col-xl-6 col-lg-12 col-md-12 col-sm-12">
+        <!-- Feature Block Two -->
+        <div class="feature-block-two has-active wow fadeInUp">
+          <div class="inner-box">
+            <div class="icon-box">
+              <i class="icon flaticon-collaboration"></i>
+              <div class="icon-seven"></div>
+              <div class="icon-eight"></div>
+            </div>
+            <div class="content">
+              <h5 class="title">Stakeholder Collaboration</h5>
+              <div class="text">
+                Foster partnerships between government, industry, and communities for inclusive energy policies.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Feature Block Two -->
+        <div class="feature-block-two has-active wow fadeInUp" data-wow-delay="200ms">
+          <div class="inner-box active">
+            <div class="icon-box">
+              <i class="icon flaticon-sustainability"></i>
+              <div class="icon-seven"></div>
+              <div class="icon-eight"></div>
+            </div>
+            <div class="content">
+              <h5 class="title">Economic Sustainability</h5>
+              <div class="text">
+                Promote investment and job creation through sustainable natural gas development initiatives.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Feature Section -->
+
+<!-- Main Footer -->
+<footer class="main-footer footer-style-three">
+  <div class="bg bg-pattern-10"></div>
+
+
+
+
+  <!-- Widgets Section -->
+  <div class="widgets-section">
+    <div class="auto-container">
+      <div class="row">
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget about-widget">
+            <div class="widget-content">
+            
+              <h1 class="title">Let's Connect.</h1>
+              <div class="text">
+                The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.
+              </div>
+              
+              <div class="copyright-text">
+                © Copyright 2025 All Rights Reserved by
+                <a href="https://edooilandgassummit.com" target="_blank">Edo Oil and Gas Summit</a>. | <a
+                  href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget post-widget">
+            <div class="widget-content">
+              <div class="swiper post-swiper">
+                <div class="swiper-wrapper"></div>
+              </div>
+              <div class="nav-box">
+                <div class="swiper-button-prev">
+                  <span class="icon fa fa-arrow-left"></span>
+                </div>
+                <div class="swiper-button-next">
+                  <span class="icon fa fa-arrow-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget newsletter-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <div class="widget-content">
+              <div class="text">
+                Subscribe to our newsletter & stay updated with the latest
+                summit news and events.
+              </div>
+              <div class="newsletter-form-two">
+                <form>
+                  <div class="form-group" style="display: flex; gap: 10px">
+                    <input type="email" name="email" class="email" value="" placeholder="Subscribe Email ......"
+                      required="" style="max-width: 500px" />
+                    <button type="submit" class="theme-btn btn-style-one bg-yellow">
+                      <span class="btn-title">Subscribe</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget contact-widget">
+            <h3 class="widget-title">Information</h3>
+            <div class="widget-content">
+              <ul class="contact-list-three light">
+                <li class="location">
+                  <i class="fa fa-map-marker-alt"></i>Benin City, Edo State,
+                        Nigeria.
+                </li>
+              </ul>
+            </div>
+            <div class="widget-content" style="margin-top: 20px">
+              <ul class="contact-list-three light" style="display: flex; flex-direction: column; gap: 10px">
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-phone"></i>
+                    <div class="h5">Contact No.</div>
+                  </div>
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </li>
+
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-envelope"></i>
+                    <div class="h5">Email Address</div>
+                  </div>
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--End Main Footer -->
+  </div>
+  <!-- End Page Wrapper -->
+
+  <!-- Back To Top Start -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+    </svg>
+  </div>
+  <!-- back to top end -->
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.js' %}"></script>
+  <script src="{% static 'js/wow.js' %}"></script>
+  <script src="{% static 'js/appear.js' %}"></script>
+  <script src="{% static 'js/lightcase.js' %}"></script>
+  <script src="{% static 'js/swipper.min.js' %}"></script>
+  <script src="{% static 'js/backtotop.js' %}"></script>
+  <script src="{% static 'js/gsap.min.js' %}"></script>
+  <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+  <script src="{% static 'js/backtotop.js' %}"></script>
+  <script src="{% static 'js/splitType.js' %}"></script>
+  <script src="{% static 'js/SplitText.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <!-- Form Handler -->
+  <script src="{% static 'js/form-handler.js' %}"></script>
+  <!-- Color Setting -->
+  <script src="{% static 'js/color-settings.js' %}"></script>
+</body>
+
+</html>

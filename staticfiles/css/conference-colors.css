@@ -1,0 +1,96 @@
+/* Professional Color Scheme for Edo Youth Conference 
+   This CSS overrides the default theme colors with a more professional palette
+*/
+
+:root {
+  /* Professional Color Palette */
+  --theme-color1: #18bb20; /* Deep navy blue instead of bright pink */
+  --theme-color2: #f2b705; /* Muted gold instead of bright yellow */
+  --theme-color3: #349541; /* Medium blue instead of bright purple */
+  --theme-color4: #036666; /* Deep teal instead of bright orange */
+  --theme-color-light: #ffffff;
+  --theme-color-dark: #13293d;
+
+  /* Gradient Backgrounds */
+  --gradient-primary: linear-gradient(135deg, #1a4d8c, #345995);
+  --gradient-secondary: linear-gradient(135deg, #036666, #107e7d);
+  --gradient-accent: linear-gradient(135deg, #f2b705, #f29f05);
+}
+
+/* Button Styling */
+.btn-style-one.bg-yellow {
+  background-color: var(--theme-color2);
+}
+
+.btn-style-one.bg-pink {
+  background-color: var(--theme-color1);
+}
+
+.btn-style-one.bg-blue {
+  background-color: var(--theme-color3);
+}
+
+.btn-style-one.bg-orange {
+  background-color: var(--theme-color4);
+}
+
+/* Section Backgrounds */
+.feature-section-two,
+.why-conference-matters-section {
+  background-color: #f8f9fa !important;
+}
+
+.governor-section,
+.federal-vision-section {
+  background-color: #fff !important;
+}
+
+/* Mission Statement Box */
+.mission-statement {
+  background: var(--gradient-primary) !important;
+}
+
+/* Footer and Header */
+.footer-style-three {
+  background-color: var(--theme-color-dark);
+}
+
+/* Subtitle Colors */
+.sec-title .sub-title {
+  color: var(--theme-color1);
+}
+
+/* Feature Blocks */
+.feature-block .inner-box {
+  transition: all 0.3s ease;
+}
+
+.feature-block .inner-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Override any artistic animations with more subtle ones */
+.bounce-y,
+.bounce-x {
+  animation-duration: 6s;
+}
+
+/* Conference purpose blocks */
+.conference-purpose-block {
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.conference-purpose-block:hover {
+  background-color: #f8f9fa;
+}
+
+/* Federal Program Blocks */
+.federal-program-block .inner-box {
+  border: 1px solid #eaeaea;
+}
+
+.federal-program-block .inner-box.active {
+  border-color: var(--theme-color2);
+}

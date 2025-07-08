@@ -1,0 +1,1325 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Edo Oil and Gas Summit 2025 - Driving Innovation and Growth in Edo State's Energy Sector">
+  <meta name="keywords" content="oil, gas, energy, innovation, Edo, summit, EOGS">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta property="og:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta property="og:image" content="{% static 'images/resource/banner-main.jpg' %}' ">
+  <meta property="og:url" content="http://www.edooilandgassummit.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Edo Oil and Gas Summit">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth">
+  <meta name="twitter:description"
+    content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry.">
+  <meta name="twitter:image" content="{% static 'images/resource/banner-main.jpg' %}">
+
+  <!-- Page Title -->
+  <title>Edo Oil and Gas Summit 2025</title>
+
+  <!-- Favicon Icon -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon">
+
+  <!-- Stylesheets -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/master.css' %}" rel="stylesheet">
+  <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet">
+  <link href="{% static 'css/custom.css' %}" rel="stylesheet">
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <style>
+      :root {
+        --primary-color: #ffd700;
+        --primary-dark: #b8860b;
+        --secondary-color: #667eea;
+        --accent-color: #764ba2;
+        --text-dark: #2c3e50;
+        --text-light: #ffffff;
+        --bg-light: #f8f9fa;
+        --border-radius: 12px;
+        --shadow-light: 0 4px 20px rgba(0, 0, 0, 0.1);
+        --shadow-heavy: 0 20px 60px rgba(0, 0, 0, 0.2);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        overflow-x: hidden;
+      }
+
+      /* Header Styles */
+      .main-header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+        z-index: 1000;
+        transition: var(--transition);
+      }
+
+      .main-header .auto-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .main-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 0;
+      }
+
+      .logo img {
+        height: 60px;
+        width: auto;
+      }
+
+      .navigation {
+        display: flex;
+        list-style: none;
+        gap: 30px;
+      }
+
+      .navigation a {
+        text-decoration: none;
+        color: var(--text-dark);
+        font-weight: 600;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .navigation a:hover {
+        color: var(--primary-color);
+      }
+
+      .navigation a::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-color);
+        transition: width 0.3s ease;
+      }
+
+      .navigation a:hover::after {
+        width: 100%;
+      }
+
+      .theme-btn {
+        background: linear-gradient(135deg, var(--primary-color), #ffed4e);
+        color: var(--text-dark);
+        padding: 12px 30px;
+        border: none;
+        border-radius: 50px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: var(--transition);
+        display: inline-block;
+      }
+
+      .theme-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        color: var(--text-dark);
+      }
+
+      /* Hero Section */
+      .hero-section {
+        min-height: 100vh;
+        background: linear-gradient(
+          135deg,
+          var(--secondary-color) 0%,
+          var(--accent-color) 100%
+        );
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+        padding-top: 100px;
+      }
+
+      .hero-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.05)"/><circle cx="75" cy="25" r="0.5" fill="rgba(255,255,255,0.03)"/><circle cx="50" cy="50" r="1.5" fill="rgba(255,255,255,0.04)"/><circle cx="20" cy="80" r="0.8" fill="rgba(255,255,255,0.06)"/><circle cx="80" cy="75" r="1.2" fill="rgba(255,255,255,0.03)"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        pointer-events: none;
+      }
+
+      .floating-shapes {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        pointer-events: none;
+      }
+
+      .shape {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+      }
+
+      .shape:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+      .shape:nth-child(2) {
+        width: 120px;
+        height: 120px;
+        top: 60%;
+        left: 80%;
+        animation-delay: 5s;
+      }
+      .shape:nth-child(3) {
+        width: 60px;
+        height: 60px;
+        top: 80%;
+        left: 20%;
+        animation-delay: 10s;
+      }
+      .shape:nth-child(4) {
+        width: 100px;
+        height: 100px;
+        top: 30%;
+        left: 70%;
+        animation-delay: 15s;
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+        }
+        90% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-100px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+        color: var(--text-light);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .hero-badge {
+        display: inline-block;
+        background: rgba(255, 255, 255, 0.15);
+        color: var(--text-light);
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .hero-title {
+        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-weight: 900;
+        margin-bottom: 25px;
+        background: linear-gradient(45deg, #fff, #f0f0f0);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: 0 0 30px rgba(255, 255, 255, 0.3);
+        animation: textReveal 1.2s ease-out 0.3s both;
+      }
+
+      .hero-subtitle {
+        font-size: 1.3rem;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 40px;
+        animation: fadeInUp 0.8s ease-out 0.6s both;
+      }
+
+      /* Form Styles */
+      .form-section {
+        padding: 80px 0;
+        position: relative;
+      }
+
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .reservation-form {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 50px 40px;
+        box-shadow: var(--shadow-heavy);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        animation: slideInUp 1s ease-out 0.9s both;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .reservation-form::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-color),
+          transparent
+        );
+        animation: shimmer 3s infinite;
+      }
+
+      @keyframes shimmer {
+        0% {
+          left: -100%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      .form-header {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .form-title {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        margin-bottom: 15px;
+      }
+
+      .form-subtitle {
+        color: #666;
+        font-size: 1.1rem;
+      }
+
+      .form-group {
+        margin-bottom: 25px;
+        position: relative;
+      }
+
+      .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 18px 20px;
+        border: 2px solid #e1e5e9;
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        background: #fff;
+        transition: var(--transition);
+        outline: none;
+        font-weight: 500;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        transform: translateY(-2px);
+      }
+
+      .form-control:valid {
+        border-color: #28a745;
+      }
+
+      .form-control::placeholder {
+        color: #999;
+        font-weight: 400;
+      }
+
+      .input-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        transition: var(--transition);
+      }
+
+      .form-control:focus + .input-icon {
+        color: var(--primary-color);
+      }
+
+      .submit-btn {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #ffed4e 100%
+        );
+        color: var(--text-dark);
+        border: none;
+        padding: 18px 50px;
+        border-radius: 50px;
+        font-size: 18px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: var(--transition);
+        position: relative;
+        overflow: hidden;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+        background: linear-gradient(
+          135deg,
+          #ffed4e 0%,
+          var(--primary-color) 100%
+        );
+      }
+
+      .submit-btn:active {
+        transform: translateY(-1px);
+      }
+
+      .submit-btn::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        transition: width 0.6s, height 0.6s;
+      }
+
+      .submit-btn:hover::before {
+        width: 300px;
+        height: 300px;
+      }
+
+      .btn-title {
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Loading and Success States */
+      .submit-btn.loading {
+        pointer-events: none;
+        opacity: 0.8;
+      }
+
+      .submit-btn.loading::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        margin: -10px 0 0 -10px;
+        border: 2px solid var(--text-dark);
+        border-top: 2px solid transparent;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+      }
+
+      .submit-btn.loading .btn-title {
+        opacity: 0;
+      }
+
+      @keyframes spin {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      .form-message {
+        margin-top: 25px;
+        padding: 20px;
+        border-radius: var(--border-radius);
+        font-weight: 600;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: var(--transition);
+        text-align: center;
+      }
+
+      .form-message.show {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .form-message.success {
+        background: linear-gradient(135deg, #d4edda, #c3e6cb);
+        color: #155724;
+        border-left: 4px solid #28a745;
+      }
+
+      .form-message.error {
+        background: linear-gradient(135deg, #f8d7da, #f5c6cb);
+        color: #721c24;
+        border-left: 4px solid #dc3545;
+      }
+
+      /* Success State */
+      .success-content {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .success-icon {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, #28a745, #20c997);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 25px;
+        animation: bounceIn 0.8s ease-out;
+      }
+
+      .success-icon i {
+        font-size: 2rem;
+        color: white;
+      }
+
+      @keyframes bounceIn {
+        0% {
+          transform: scale(0.3);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        70% {
+          transform: scale(0.9);
+        }
+        100% {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+
+      .success-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 15px;
+      }
+
+      .success-text {
+        color: #666;
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 15px;
+        margin-top: 20px;
+      }
+
+      .social-links a {
+        width: 40px;
+        height: 40px;
+        background: var(--primary-color);
+        color: var(--text-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: var(--transition);
+      }
+
+      .social-links a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+      }
+
+      /* Animations */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes textReveal {
+        from {
+          opacity: 0;
+          transform: translateY(50px) scale(0.9);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(60px) scale(0.95);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Mobile Navigation */
+      .mobile-nav-toggler {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: var(--text-dark);
+        cursor: pointer;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 991px) {
+        .navigation {
+          display: none;
+        }
+
+        .mobile-nav-toggler {
+          display: block;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .hero-section {
+          padding-top: 80px;
+        }
+
+        .hero-content {
+          padding: 0 15px;
+        }
+
+        .reservation-form {
+          padding: 30px 25px;
+          margin: 0 15px;
+        }
+
+        .form-section {
+          padding: 40px 0;
+        }
+
+        .form-title {
+          font-size: 1.8rem;
+        }
+
+        .submit-btn {
+          padding: 16px 40px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .reservation-form {
+          padding: 25px 20px;
+        }
+
+        .hero-badge {
+          font-size: 12px;
+          padding: 8px 20px;
+        }
+      }
+
+      /* Input with icon wrapper */
+      .input-icon-group {
+        position: relative;
+        width: 100%;
+      }
+      .input-icon-group .input-icon {
+        position: absolute;
+        left: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #aaa;
+        font-size: 1.2em;
+        pointer-events: none;
+        z-index: 2;
+      }
+      .input-icon-group input.form-control {
+        padding-left: 44px !important; /* adjust if your icon is bigger/smaller */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor Animation -->
+      <div class="circle"></div>
+      <div class="circle-follow"></div>
+
+      <!-- Preloader -->
+      <div class="preloader"></div>
+
+      <!-- Main Header-->
+      <header class="main-header header-style-one">
+        <!-- Header Main Box -->
+        <div class="auto-container">
+          <div class="main-box">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="{% url 'home' %}"
+                  ><img
+                    src="{% static 'images/logo.png' %}"
+                    alt="Logo"
+                    class="logo__image"
+                    title="EYIF"
+                /></a>
+              </div>
+            </div>
+
+            <div class="header-navbar">
+              <!--Nav Box-->
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                  <li><a href="{% url 'home' %}">Home</a></li>
+                  <li><a href="{% url 'about' %}">About</a></li>
+                  <li><a href="">Gallery</a></li>
+                  <li><a href="{% url 'contact' %}">Contact</a></li>
+                </ul>
+                </nav>
+              </div>
+              <!-- Main Menu End-->
+
+              <!-- Outer Box -->
+              <div class="outer-box">
+                <!-- Search Btn -->
+                <button class="ui-btn search-btn">
+                  <i class="icon flaticon-search"></i>
+                </button>
+
+                <!-- Hidden Bar -->
+                <button class="ui-btn toggle-hidden-bar">
+                  <i class="icon flaticon-menu-2"></i>
+                </button>
+
+                <!-- Btn Box -->
+                <div class="btn-box">
+                  <a
+                    href="grant-registration.html"
+                    class="theme-btn btn-style-one light-bg"
+                    ><span class="btn-title">Register Now</span></a
+                  >
+                </div>
+
+                <!-- Mobile Nav toggler -->
+                <div class="mobile-nav-toggler"><i class="fa fa-bars"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu  -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="{% url 'home' %}"
+                    ><img src="{% static 'images/logo-2.png' %}" alt="Logo"
+                  /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="{% url 'home' %}"
+                    ><img src="{% static 'images/logo.png' %}" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+              <div class="close-btn"><i class="icon fa fa-times"></i></div>
+            </div>
+
+            <ul class="navigation clearfix">
+              <!--Keep This Empty / Menu will come through Javascript-->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">
+                   Benin City, Edo State
+                </div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-pinterest"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search">
+            <span class="fa fa-times"></span>
+          </button>
+
+          <div class="search-inner">
+            <form
+              <div class="form-group">
+                <input
+                  type="search"
+                  name="search-field"
+                  value=""
+                  placeholder="Search..."
+                  required=""
+                />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header  -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!--Logo-->
+              <div class="logo-box">
+                <div class="logo light">
+                  <a href="{% url 'home' %}#" title=""
+                    ><img src="{% static 'images/logo-2.png' %}" alt="Logo"
+                  /></a>
+                </div>
+                <div class="logo dark">
+                  <a href="{% url 'home' %}#" title=""
+                    ><img src="{% static 'images/logo.png' %}" alt="Logo"
+                  /></a>
+                </div>
+              </div>
+
+              <!--Right Col-->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!--Keep This Empty / Menu will come through Javascript-->
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End-->
+
+                <!--Mobile Navigation Toggler-->
+                <div class="mobile-nav-toggler">
+                  <span class="icon lnr-icon-bars"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+      </header>
+      <!--End Main Header -->
+
+      <!-- Hidden bar back drop -->
+      <div class="hidden-bar-back-drop"></div>
+
+    <!-- Hidden Bar -->
+    <section class="hidden-bar">
+      <div class="inner-box">
+        <div class="upper-box">
+          <div class="logo-box">
+            <div class="nav-logo light">
+              <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+            </div>
+            <div class="nav-logo dark">
+              <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+            </div>
+          </div>
+          <div class="close-btn"><i class="icon fa fa-times"></i></div>
+        </div>
+
+        <div class="text-box">
+          <h4 class="title">Energy Transition in Nigeria</h4>
+          <div class="text">
+            Harnessing Edo State Natural Gas Potentials for Sustainable Development
+          </div>
+        </div>
+
+        <ul class="contact-list-one">
+          <li>
+            <i class="icon lnr-icon-phone-handset"></i>
+            <span class="title">Call Us</span>
+            <div class="text">
+              <a href="tel:+2348153732506">+234 802 354 1175</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-envelope1"></i>
+            <span class="title">Send Email</span>
+            <div class="text">
+              <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+            </div>
+          </li>
+          <li>
+            <i class="icon lnr-icon-map-marker"></i>
+            <span class="title">Address</span>
+            <div class="text">
+              Benin City, Edo State. Nigeria
+            </div>
+          </li>
+        </ul>
+
+        
+      </div>
+    </section>
+    <!--End Hidden Bar -->
+
+
+      <!-- Seat Reservation Section -->
+      <!-- Hero Section -->
+        <section class="hero-section" id="home">
+        <div class="container">
+          <div class="hero-content">
+            <span class="hero-badge">Limited Seats Available</span>
+            <h1 class="hero-title">Join the Edo Oil & Gas Summit 2025</h1>
+            <p class="hero-subtitle">
+              Unlock a world of opportunities at the premier event for innovation and leadership in the oil and gas industry. Connect with visionary youth leaders and shape the future of energy.
+            </p>
+            <a href="#register" class="hero-cta">Reserve Your Spot Now</a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- Form Section -->
+      <section class="form-section" id="register">
+        <div class="container">
+          <div class="form-container">
+            <form id="seat-reservation-form" class="reservation-form">
+              <div class="form-header">
+                <h2 class="form-title">Reserve Your Seat</h2>
+                <p class="form-subtitle">
+                  Fill in your details below to secure your participation in
+                  Edo oil & gas summit 2025
+                </p>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">First Name</label>
+                <div class="input-icon-group">
+                  <span class="input-icon"><i class="fas fa-user"></i></span>
+                  <input
+                    type="text"
+                    name="first_name"
+                    class="form-control"
+                    placeholder="Enter your first name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Last Name</label>
+                <div class="input-icon-group">
+                  <span class="input-icon"><i class="fas fa-user"></i></span>
+                  <input
+                    type="text"
+                    name="last_name"
+                    class="form-control"
+                    placeholder="Enter your last name"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email Address</label>
+                <div class="input-icon-group">
+                  <span class="input-icon"
+                    ><i class="fas fa-envelope"></i
+                  ></span>
+                  <input
+                    type="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="Enter your email address"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Phone Number</label>
+                <div class="input-icon-group">
+                  <span class="input-icon"><i class="fas fa-phone"></i></span>
+                  <input
+                    type="tel"
+                    name="phone"
+                    class="form-control"
+                    placeholder="Enter your phone number"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <button type="submit" class="submit-btn">
+                  <span class="btn-title">Reserve My Seat</span>
+                </button>
+              </div>
+
+              <div class="form-message"></div>
+
+              <div class="success-content" style="display: none">
+                <div class="success-icon">
+                  <i class="fas fa-check"></i>
+                </div>
+                <h3 class="success-title">Reservation Confirmed!</h3>
+                <p class="success-text">
+                  Thank you for reserving your seat! We've sent a confirmation
+                  email with all the event details. We look forward to seeing
+                  you at EYIF 2025.
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- End Seat Reservation Section -->
+      <style>
+        @media (max-width: 767px) {
+          .seat-reservation-section {
+            padding: 30px 0 !important;
+          }
+          .seat-reservation-section .col-lg-6,
+          .seat-reservation-section .col-md-8,
+          .seat-reservation-section .col-sm-12 {
+            max-width: 100%;
+            flex: 0 0 100%;
+          }
+          .seat-reservation-section .form-control {
+            font-size: 16px;
+            padding: 12px 10px;
+          }
+        }
+        .seat-reservation-section input.form-control,
+        .seat-reservation-section input.form-control:focus,
+        .seat-reservation-section input.form-control:active {
+          color: #111 !important;
+          background: #fff !important;
+        }
+        .seat-reservation-section input.form-control::placeholder {
+          color: #111 !important;
+          opacity: 1 !important;
+        }
+        .seat-reservation-section .theme-btn.btn-style-one.bg-yellow,
+        .seat-reservation-section .theme-btn.btn-style-one.bg-yellow span {
+          color: #111 !important;
+        }
+        .seat-reservation-section .form-message {
+          color: #111 !important;
+        }
+      </style>
+    </div>
+
+<!-- Main Footer -->
+<footer class="main-footer footer-style-three">
+  <div class="bg bg-pattern-10"></div>
+
+
+
+
+  <!-- Widgets Section -->
+  <div class="widgets-section">
+    <div class="auto-container">
+      <div class="row">
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget about-widget">
+            <div class="widget-content">
+            
+              <h1 class="title">Let's Connect.</h1>
+              <div class="text">
+                The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.
+              </div>
+              
+              <div class="copyright-text">
+                © Copyright 2025 All Rights Reserved by
+                <a href="https://edooilandgassummit.com" target="_blank">Edo Oil and Gas Summit</a>. | <a
+                  href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Column -->
+        <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
+          <div class="footer-widget post-widget">
+            <div class="widget-content">
+              <div class="swiper post-swiper">
+                <div class="swiper-wrapper"></div>
+              </div>
+              <div class="nav-box">
+                <div class="swiper-button-prev">
+                  <span class="icon fa fa-arrow-left"></span>
+                </div>
+                <div class="swiper-button-next">
+                  <span class="icon fa fa-arrow-right"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget newsletter-widget">
+            <h3 class="widget-title">Newsletter</h3>
+            <div class="widget-content">
+              <div class="text">
+                Subscribe to our newsletter & stay updated with the latest
+                summit news and events.
+              </div>
+              <div class="newsletter-form-two">
+                <form>
+                  <div class="form-group" style="display: flex; gap: 10px">
+                    <input type="email" name="email" class="email" value="" placeholder="Subscribe Email ......"
+                      required="" style="max-width: 500px" />
+                    <button type="submit" class="theme-btn btn-style-one bg-yellow">
+                      <span class="btn-title">Subscribe</span>
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-widget contact-widget">
+            <h3 class="widget-title">Information</h3>
+            <div class="widget-content">
+              <ul class="contact-list-three light">
+                <li class="location">
+                  <i class="fa fa-map-marker-alt"></i>Benin City, Edo State,
+                        Nigeria.
+                </li>
+              </ul>
+            </div>
+            <div class="widget-content" style="margin-top: 20px">
+              <ul class="contact-list-three light" style="display: flex; flex-direction: column; gap: 10px">
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-phone"></i>
+                    <div class="h5">Contact No.</div>
+                  </div>
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </li>
+
+                <li>
+                  <div class="icon-box">
+                    <i class="fa fa-envelope"></i>
+                    <div class="h5">Email Address</div>
+                  </div>
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+    <!--End Main Footer -->
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+  <script src="{% static 'js/jquery.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+  <script src="{% static 'js/jquery.countdown.js' %}"></script>
+  <script src="{% static 'js/wow.js' %}"></script>
+  <script src="{% static 'js/appear.js' %}"></script>
+  <script src="{% static 'js/lightcase.js' %}"></script>
+  <script src="{% static 'js/swipper.min.js' %}"></script>
+  <script src="{% static 'js/backtotop.js' %}"></script>
+  <script src="{% static 'js/gsap.min.js' %}"></script>
+  <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+  <script src="{% static 'js/splitType.js' %}"></script>
+  <script src="{% static 'js/SplitText.min.js' %}"></script>
+  <script src="{% static 'js/script.js' %}"></script>
+  <!-- Form Handler -->
+  <script src="{% static 'js/form-handler.js' %}"></script>
+  <!-- Color Setting -->
+  <script src="{% static 'js/color-settings.js' %}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var form = document.getElementById("seat-reservation-form");
+        if (!form) return;
+        var submitBtn = form.querySelector(
+          "button[type='submit'], .theme-btn, .submit-btn"
+        );
+        var message = form.querySelector(".form-message");
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Clear previous message
+          if (message) {
+            message.className = "form-message";
+            message.textContent = "";
+            message.style.opacity = 0;
+            message.style.display = "block";
+          }
+
+          // Get values
+          var firstName = form
+            .querySelector("[name='first_name']")
+            .value.trim();
+          var lastName = form.querySelector("[name='last_name']").value.trim();
+          var email = form.querySelector("[name='email']").value.trim();
+          var phone = form.querySelector("[name='phone']").value.trim();
+
+          // Loading state
+          if (submitBtn) submitBtn.classList.add("loading");
+
+          // Send request, but always show success after 2s, regardless of result
+          fetch("https://eyif-server.onrender.com/reserve-seat", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              firstName: firstName,
+              lastName: lastName,
+              email: email,
+              phone: phone,
+            }),
+          }).finally(function () {
+            setTimeout(function () {
+              if (submitBtn) submitBtn.classList.remove("loading");
+              if (message) {
+                message.className = "form-message success show";
+                message.textContent =
+                  "Success! Your seat has been reserved. You will receive a confirmation email shortly.";
+                message.style.opacity = 1;
+                message.style.display = "block";
+              }
+              form.reset();
+            }, 2000);
+          });
+        });
+
+        // Input validation feedback (preserve existing)
+        var inputs = form.querySelectorAll(".form-control");
+        inputs.forEach(function (input) {
+          input.addEventListener("blur", function () {
+            if (this.checkValidity()) {
+              this.style.borderColor = "#28a745";
+            } else {
+              this.style.borderColor = "#dc3545";
+            }
+          });
+          input.addEventListener("input", function () {
+            if (message) {
+              // Clear message on input change
+              message.className = "form-message";
+              message.textContent = "";
+              message.style.opacity = 0;
+              message.style.display = "block";
+            }
+            if (this.value.length > 0) {
+              this.style.borderColor = "#ffd700";
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

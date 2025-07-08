@@ -1,0 +1,1271 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Edo Oil and Gas Summit 2025 - Driving Innovation and Growth in Edo State's Energy Sector" />
+    <meta name="keywords" content="oil, gas, energy, innovation, Edo, summit, EOGS" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth" />
+    <meta property="og:description" content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry." />
+    <meta property="og:image" content="{% static 'images/resource/banner-main.jpg' %}' " />
+    <meta property="og:url" content="http://www.edooilandgassummit.com" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Edo Oil and Gas Summit" />
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth" />
+    <meta name="twitter:description" content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry." />
+    <meta name="twitter:image" content="{% static 'images/resource/banner-main.jpg' %}" />
+
+    <!-- Page Title -->
+    <title>Edo Oil and Gas Summit 2025</title>
+
+    <!-- Favicon Icon -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" type="image/x-icon" />
+
+    <!-- Stylesheets -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/master.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/color-switcher-design.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/custom.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+
+    <style>
+      .footer-flex {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      .footer-column {
+        flex: 0 0 auto;
+      }
+      
+      .footer-column:nth-child(1) {
+        width: 35%;
+      }
+      
+      .footer-column:nth-child(2) {
+        width: 25%;
+      }
+      
+      .footer-column:nth-child(3) {
+        width: 35%;
+      }
+      
+      @media (max-width: 991px) {
+        .footer-column:nth-child(1),
+        .footer-column:nth-child(2),
+        .footer-column:nth-child(3) {
+          width: 100%;
+          margin-bottom: 30px;
+        }
+      }
+      
+      /* Speaker image styles */
+      .speakers-section .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      
+      .speaker-block {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .speaker-block .image-box figure.image {
+        width: 250px;
+        height: 380px;
+      }
+      
+      .speaker-block .image-box figure.image a {
+        width: 100%;
+        height: 100%;
+      }
+      
+      .speaker-block .image-box figure.image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      @media (max-width: 767px) {
+        .speaker-block {
+          width: 250px;
+          margin: 0 auto 30px;
+        }
+      
+        .speaker-block .inner-box {
+          width: 250px;
+          margin: 0 auto;
+        }
+      
+        .speaker-block .image-box {
+          width: 250px;
+          margin: 0 auto;
+        }
+      
+        .speakers-section .row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: flex-start;
+        }
+      }
+      
+      .category-card {
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        padding: 20px;
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        position: relative;
+      }
+      
+      .category-card.active {
+        border-color: #ffc000;
+        background-color: rgba(255, 192, 0, 0.05);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      }
+      
+      .category-card h5 {
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+      
+      .category-card p {
+        font-size: 14px;
+        color: #666;
+        margin-bottom: 0;
+      }
+      
+      .radio-input {
+        position: absolute;
+        opacity: 0;
+      }
+      
+      .radio-indicator {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        height: 22px;
+        width: 22px;
+        border: 2px solid #e0e0e0;
+        border-radius: 50%;
+      }
+      
+      .category-card.active .radio-indicator {
+        border-color: #ffc000;
+      }
+      
+      .category-card.active .radio-indicator:after {
+        content: '';
+        position: absolute;
+        display: block;
+        top: 3px;
+        left: 3px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #ffc000;
+      }
+      
+      .grant-info-box {
+        background-color: #f9f9f9;
+        border-left: 4px solid #ffc000;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      
+      .grant-info-box h4 {
+        margin-bottom: 15px;
+        color: #222;
+      }
+      
+      .grant-info-box ul {
+        padding-left: 20px;
+      }
+      
+      .grant-info-box ul li {
+        margin-bottom: 8px;
+      }
+      
+      .timeline {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      
+      .timeline:before {
+        content: '';
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #e0e0e0;
+        z-index: 1;
+      }
+      
+      .timeline-item {
+        text-align: center;
+        flex: 1;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .timeline-item:not(:last-child):after {
+        display: none;
+      }
+      
+      .timeline-dot {
+        width: 30px;
+        height: 30px;
+        background-color: #ffc000;
+        border-radius: 50%;
+        margin: 0 auto 10px;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .timeline-date {
+        font-weight: 600;
+        font-size: 14px;
+      }
+      
+      .timeline-label {
+        font-size: 12px;
+        color: #666;
+      }
+      
+      .page-banner .content-box .title {
+        line-height: 1.2;
+        margin-bottom: 15px;
+      }
+      
+      .page-banner .content-box .title br {
+        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+      }
+      
+      @media (max-width: 767px) {
+        .page-banner .content-box .title {
+          font-size: 28px;
+          margin-bottom: 10px;
+        }
+      
+        .page-banner {
+          padding-top: 8rem !important;
+          padding-bottom: 3rem !important;
+        }
+      
+        .page-banner .content-box {
+          margin-bottom: 0;
+        }
+      }
+      
+      /* Filter Buttons for Speakers Section */
+      .filter-buttons {
+        text-align: center;
+        margin-bottom: 50px;
+      }
+      
+      .filter-buttons .btn {
+        background-color: #f0f0f0;
+        color: #333;
+        border: 1px solid #ddd;
+        padding: 10px 20px;
+        margin: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      
+      .filter-buttons .btn:hover {
+        background-color: #e0e0e0;
+      }
+      
+      .filter-buttons .btn.active {
+        background-color: #ffc000;
+        color: #fff;
+        border-color: #ffc000;
+      }
+      
+      @media (max-width: 767px) {
+        .seat-reservation-section {
+          padding: 30px 0 !important;
+        }
+      
+        .seat-reservation-section .col-lg-6,
+        .seat-reservation-section .col-md-8,
+        .seat-reservation-section .col-sm-12 {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+      
+        .seat-reservation-section .form-control {
+          font-size: 16px;
+          padding: 12px 10px;
+        }
+      }
+      
+      /* Fix for dim h2.text-reveal-anim */
+      h2.text-reveal-anim {
+        color: #111 !important;
+        background: none !important;
+        -webkit-background-clip: initial !important;
+        background-clip: initial !important;
+        -webkit-text-fill-color: #111 !important;
+        text-shadow: none !important;
+      }
+      
+      .mobile-menu {
+        display: block;
+      }
+      
+      /* hide the mobile button on desktops */
+      @media screen and (min-width: 399px) {
+        .mobile-btn {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="page-wrapper">
+      <!-- Cursor Animation -->
+      <div class="circle"></div>
+      <div class="circle-follow"></div>
+
+      <!-- Preloader -->
+      <div class="preloader"></div>
+
+      <!-- Main Header -->
+      <header class="main-header header-style-one">
+        <!-- Header Main Box -->
+        <div class="auto-container">
+          <div class="main-box">
+            <div class="logo-box">
+              <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" class="logo__image" title="EYIF" /></a>
+              </div>
+            </div>
+
+            <div style="background-color:  #15351B;" class="header-navbar">
+              <!-- Nav Box -->
+              <div class="nav-outer">
+                <nav class="nav main-menu">
+                  <ul class="navigation">
+                    <li class="current">
+                      <a href="{% url 'home' %}">Home</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'about' %}">About</a>
+                    </li>
+                    <li>
+                      <a href="">Gallery</a>
+                    </li>
+                    <li>
+                      <a href="{% url 'contact' %}">Contact</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <!-- Main Menu End -->
+
+              <!-- Outer Box -->
+              <div class="outer-box">
+                <!-- Search Btn -->
+                <button class="ui-btn search-btn"><i class="icon flaticon-search"></i></button>
+
+                <!-- Hidden Bar -->
+                <button class="ui-btn toggle-hidden-bar"><i class="icon flaticon-menu-2"></i></button>
+
+                <!-- Btn Box -->
+                <div class="btn-box">
+                  <a href="{% url 'contact' %}" class="theme-btn btn-style-one light-bg"><span class="btn-title">contact</span></a>
+                </div>
+
+                <!-- Mobile Nav toggler -->
+                <div class="mobile-nav-toggler">
+                  <i class="fa fa-bars"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu">
+          <div class="menu-backdrop"></div>
+
+          <!-- Here Menu Will Come Automatically Via Javascript / Same Menu as in Header -->
+          <nav class="menu-box">
+            <div class="upper-box">
+              <div class="logo-box">
+                <div class="nav-logo light">
+                  <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+                </div>
+                <div class="nav-logo dark">
+                  <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+                </div>
+              </div>
+              <div class="close-btn">
+                <i class="icon fa fa-times"></i>
+              </div>
+            </div>
+
+            <ul class="navigation clearfix">
+              <!-- Keep This Empty / Menu will come through Javascript -->
+            </ul>
+            <ul class="contact-list-one">
+              <li>
+                <i class="icon lnr-icon-phone-handset"></i>
+                <span class="title">Call Us</span>
+                <div class="text">
+                  <a href="tel:+2348153732506">+234 802 354 1175</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-envelope1"></i>
+                <span class="title">Send Email</span>
+                <div class="text">
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </div>
+              </li>
+              <li>
+                <i class="icon lnr-icon-map-marker"></i>
+                <span class="title">Address</span>
+                <div class="text">Benin City, Edo State</div>
+              </li>
+            </ul>
+
+            <ul class="social-links">
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-facebook-f"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-pinterest"></i></a>
+              </li>
+              <li>
+                <a href="{% url 'home' %}#"><i class="fab fa-instagram"></i></a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!-- End Mobile Menu -->
+
+        <!-- Header Search -->
+        <div class="search-popup">
+          <span class="search-back-drop"></span>
+          <button class="close-search"><span class="fa fa-times"></span></button>
+
+          <div class="search-inner">
+            <form>
+              <div class="form-group">
+                <input type="search" name="search-field" value="" placeholder="Search..." required="" />
+                <button type="submit"><i class="fa fa-search"></i></button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- End Header Search -->
+
+        <!-- Sticky Header -->
+        <div class="sticky-header">
+          <div class="auto-container">
+            <div class="inner-container">
+              <!-- Logo -->
+              <div class="logo-box">
+                <div class="logo light">
+                  <a href="{% url 'home' %}#" title=""><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+                </div>
+                <div class="logo dark">
+                  <a href="{% url 'home' %}#" title=""><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+                </div>
+              </div>
+
+              <!-- Right Col -->
+              <div class="nav-outer">
+                <!-- Main Menu -->
+                <nav class="main-menu">
+                  <div class="navbar-collapse show collapse clearfix">
+                    <ul class="navigation clearfix">
+                      <!-- Keep This Empty / Menu will come through Javascript -->
+                    </ul>
+                  </div>
+                </nav>
+                <!-- Main Menu End -->
+
+                <!-- Mobile Navigation Toggler -->
+                <div class="mobile-nav-toggler">
+                  <span class="icon lnr-icon-bars"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- End Sticky Menu -->
+      </header>
+      <!-- End Main Header -->
+
+      <!-- Hidden bar back drop -->
+      <div class="hidden-bar-back-drop"></div>
+
+      <!-- Hidden Bar -->
+      <section class="hidden-bar">
+        <div class="inner-box">
+          <div class="upper-box">
+            <div class="logo-box">
+              <div class="nav-logo light">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo-2.png' %}" alt="Logo" /></a>
+              </div>
+              <div class="nav-logo dark">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+              </div>
+            </div>
+            <div class="close-btn">
+              <i class="icon fa fa-times"></i>
+            </div>
+          </div>
+
+          <div class="text-box">
+            <h4 class="title">Energy Transition in Nigeria</h4>
+            <div class="text">Harnessing Edo State Natural Gas Potentials for Sustainable Development</div>
+          </div>
+
+          <ul class="contact-list-one">
+            <li>
+              <i class="icon lnr-icon-phone-handset"></i>
+              <span class="title">Call Us</span>
+              <div class="text">
+                <a href="tel:+2348153732506">+234 802 354 1175</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-envelope1"></i>
+              <span class="title">Send Email</span>
+              <div class="text">
+                <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+              </div>
+            </li>
+            <li>
+              <i class="icon lnr-icon-map-marker"></i>
+              <span class="title">Address</span>
+              <div class="text">Benin City, Edo State. Nigeria</div>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- End Hidden Bar -->
+
+      <!-- Banner Section -->
+      <section class="banner-section">
+        <div class="bg bg-image" style="background-image: url({% static 'images/banner/main-banner.jpg' %})"></div>
+        <div class="auto-container">
+          <div class="banner-layer"></div>
+          <div class="content-box">
+            <h1 class="title title-anim">
+              Energy Transition in Nigeria <br />
+              <span class="banner-small-images"></span>
+              <span></span>
+            </h1>
+            <style>
+              .custom__image {
+                object-fit: cover !important;
+                width: 92px;
+                height: 92px;
+              }
+            </style>
+            <div class="location-box wow fadeInRight" data-wow-delay="3100ms">
+              <div class="text">
+                Benin City <i class="icon fa fa-long-arrow-right"></i> <br />
+                Victor Uwaifo Creative Hub, Benin
+              </div>
+              <div class="btn-box">
+                <a href="{% url 'reservation' %}" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Reserve Seat</span></a>
+              </div>
+            </div>
+          </div>
+          <!-- Time Counter -->
+          <!-- Time Counter -->
+          <div class="time-counter wow fadeIn" data-wow-delay="3500ms">
+            <div class="time-countdown" data-countdown="08/07/2025">
+              <div class="counter-box">
+                <span class="days">00</span>
+                <span class="label">Days</span>
+              </div>
+              <div class="counter-box">
+                <span class="hours">00</span>
+                <span class="label">Hours</span>
+              </div>
+              <div class="counter-box">
+                <span class="minutes">00</span>
+                <span class="label">Minutes</span>
+              </div>
+              <div class="counter-box">
+                <span class="seconds">00</span>
+                <span class="label">Seconds</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Banner Section -->
+
+      <!-- About Section -->
+      <section class="about-section">
+        <div class="icon-one bounce-y"></div>
+        <div class="icon-two bounce-y"></div>
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="image-box wow fadeInUp">
+              <div class="image-outer">
+                <figure class="image overlay-anim">
+                  <img src="{% static 'images/resource/banner-main.jpg' %}" style="width: 890px; height: 415px; object-fit: cover" alt="Image" />
+                </figure>
+                <div class="icon-nineteen"></div>
+                <div class="icon-twenty"></div>
+              </div>
+              <div class="speaker-box">
+                <i class="icon flaticon-gas-pump"></i>
+                <div class="count">15+</div>
+                <div class="text">
+                  Industry <br />
+                  Experts
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="outer-box two">
+            <div class="image-box">
+              <div class="image-outer">
+                <figure class="image overlay-anim reveal">
+                  <img src="{% static 'images/resource/banner-main.jpg' %}" alt="Image" style="width: 410px; height: 518px" />
+                </figure>
+                <div class="icon-twentyfour"></div>
+              </div>
+            </div>
+            <div class="content-box wow fadeInRight" data-wow-delay="200ms">
+              <div class="sec-title">
+                <span class="sub-title">About Event</span>
+                <h2 class="text-reveal-anim">Edo Oil and Gas Summit</h2>
+                <h4 class="title">Energy Transition in Nigeria</h4>
+                <div style="color: #000000;" class="text text-anim">Harnessing Edo State's natural gas potentials is pivotal for sustainable development. This summit aims to unite industry leaders, policymakers, and innovators to explore strategies for leveraging natural gas as a cornerstone for Nigeria's energy transition. By fostering collaboration, innovation, and investment, the event seeks to drive economic growth, environmental sustainability, and energy security for a prosperous future.</div>
+              </div>
+              <div class="btn-box">
+                <a href="{% url 'contact' %}" class="theme-btn btn-style-one icon-btn"><i class="icon flaticon-placeholder"></i><span class="btn-title">Location</span></a>
+              </div>
+            </div>
+          </div>
+          <div class="outer-box show-xl">
+            <div class="image-box wow fadeInUp">
+              <figure class="image">
+                <img src="{% static 'images/resource/banner-main.jpg' %}" alt="Image" />
+              </figure>
+              <div class="speaker-box">
+                <i class="icon flaticon-gas-pump"></i>
+                <div class="count">15+</div>
+                <div class="text">
+                  Industry <br />
+                  Experts
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End About Section -->
+      <!-- Marquee Section -->
+      <div class="marquee-section">
+        <div class="marquee-container">
+          <div class="marquee">
+            <div class="text">Sustainability</div>
+            <div class="text">*</div>
+            <div class="text">Innovation</div>
+            <div class="text">*</div>
+            <div class="text">Energy Transition</div>
+            <div class="text">*</div>
+            <div class="text">Collaboration</div>
+            <div class="text">*</div>
+            <div class="text">Economic Growth</div>
+            <div class="text">*</div>
+            <div class="text">Natural Gas</div>
+            <div class="text">*</div>
+            <div class="text">Sustainability</div>
+            <div class="text">*</div>
+            <div class="text">Innovation</div>
+            <div class="text">*</div>
+            <div class="text">Energy Transition</div>
+            <div class="text">*</div>
+            <div class="text">Collaboration</div>
+            <div class="text">*</div>
+            <div class="text">Economic Growth</div>
+            <div class="text">*</div>
+            <div class="text">Natural Gas</div>
+            <div class="text">*</div>
+          </div>
+        </div>
+      </div>
+      <!-- End Marquee Section -->
+
+      <!-- Feature Section -->
+      <section style="background-color:  #ebfff3;" class="features-section">
+        <div class="shape-one bounce-y"></div>
+        <div class="shape-two"></div>
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="sub-title">Event Objectives</span>
+            <h2 class="text-reveal-anim">
+              Advancing Nigeria's <br />
+              Energy Transition
+            </h2>
+          </div>
+          <div class="row">
+            <!-- Feature Block -->
+            <div class="feature-block has-active col-lg-3 col-md-6 col-sm-6 wow fadeInUp">
+              <div class="inner-box">
+                <i class="icon flaticon-gas-pump"></i>
+                <div class="content">
+                  <h5 class="title">Resource Optimization</h5>
+                  <div class="text">Explore strategies to maximize Edo State's natural gas potential for sustainable energy solutions.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Block -->
+            <div class="feature-block has-active col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="200ms">
+              <div class="inner-box">
+                <i class="icon flaticon-innovation"></i>
+                <div class="content">
+                  <h5 class="title">Technological Innovation</h5>
+                  <div class="text">Showcase cutting-edge technologies driving the transition to cleaner energy in Nigeria.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Block -->
+            <div class="feature-block has-active col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="400ms">
+              <div class="inner-box active">
+                <i class="icon flaticon-collaboration"></i>
+                <div class="content">
+                  <h5 class="title">Stakeholder Collaboration</h5>
+                  <div class="text">Foster partnerships between government, industry, and communities for inclusive energy policies.</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Feature Block -->
+            <div class="feature-block has-active col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="600ms">
+              <div class="inner-box">
+                <i class="icon flaticon-sustainability"></i>
+                <div class="content">
+                  <h5 class="title">Economic Sustainability</h5>
+                  <div class="text">Promote investment and job creation through sustainable natural gas development initiatives.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Feature Section -->
+
+      <!-- Speakers Section -->
+      <section class="speakers-section">
+        <div class="bg bg-image" style="background-image: url({% static 'images/background/1.jpg' %})"></div>
+        <div class="auto-container">
+          <div class="sec-title light text-center">
+            <span class="sub-title">Featured Speakers</span>
+            <h2 class="text-reveal-anim">
+              Leading Voices <br />
+              For Energy Transition
+            </h2>
+          </div>
+
+          <div class="filter-buttons text-center mb-5">
+            <button class="btn btn-primary active" data-filter="all">All Speakers</button>
+          </div>
+
+          <div class="speakers-container">
+            <div class="speaker-row first-row">
+              <!-- Speaker Block 1 -->
+              <div class="speaker-block has-active col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp animated" data-category="keynote-speaker">
+                <div class="inner-box active">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a>
+                        <img src="{% static 'images/resource/1.jpg' %}" alt="Image" />
+                        <img src="{% static 'images/resource/1.jpg' %}" alt="Image" />
+                      </a>
+                    </figure>
+                    <div class="icon-box">
+                      <span class="icon share-icon fa fa-share-alt"></span>
+                    </div>
+                    <div class="social-links">
+                      <a><i class="fab fa-twitter"></i></a>
+                      <a><i class="fab fa-instagram"></i></a>
+                      <a><i class="fab fa-pinterest-p"></i></a>
+                      <a><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <h4 class="name" style="font-size: 16px"><a>H.E SENATOR MONDAY OKPEBHOLO (GOVERNOR OF EDO STATE)</a></h4>
+                    <span class="designation">Chief Host</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker Block 2 -->
+              <div class="speaker-block has-active col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-category="keynote-speaker">
+                <div class="inner-box active">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a>
+                        <img src="{% static 'images/resource/2.jpg' %}" alt="Image" />
+                        <img src="{% static 'images/resource/2.jpg' %}" alt="Image" />
+                      </a>
+                    </figure>
+                    <div class="icon-box">
+                      <span class="icon share-icon fa fa-share-alt"></span>
+                    </div>
+                    <div class="social-links">
+                      <a><i class="fab fa-twitter"></i></a>
+                      <a><i class="fab fa-instagram"></i></a>
+                      <a><i class="fab fa-pinterest-p"></i></a>
+                      <a><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <h4 class="name" style="font-size: 16px"><a>Hon. Ekperikpe Ekpo (MINISTER OF STATE FOR PETROLEUM)</a></h4>
+                    <span class="designation">Special Guest OF Honor</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker Block 3 -->
+              <div class="speaker-block has-active col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="200ms" data-category="panelist">
+                <div class="inner-box active">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a>
+                        <img src="{% static 'images/resource/3.jpg' %}" alt="Image" />
+                        <img src="{% static 'images/resource/3.jpg' %}" alt="Image" />
+                      </a>
+                    </figure>
+                    <div class="icon-box">
+                      <span class="icon share-icon fa fa-share-alt"></span>
+                    </div>
+                    <div class="social-links">
+                      <a><i class="fab fa-twitter"></i></a>
+                      <a><i class="fab fa-instagram"></i></a>
+                      <a><i class="fab fa-pinterest-p"></i></a>
+                      <a><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <h4 class="name" style="font-size: 16px"><a>Engr.Bashir Ojulari (GMD/CEO,NNPC)</a></h4>
+                    <span class="designation">Special Guest Of Honor</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="speaker-row second-row">
+              <!-- Speaker Block 4 -->
+              <div class="speaker-block has-active col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-category="masterclass-facilitator">
+                <div class="inner-box active">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a>
+                        <img src="{% static 'images/resource/4.jpg' %}" alt="Image" />
+                        <img src="{% static 'images/resource/4.jpg' %}" alt="Image" />
+                      </a>
+                    </figure>
+                    <div class="icon-box">
+                      <span class="icon share-icon fa fa-share-alt"></span>
+                    </div>
+                    <div class="social-links">
+                      <a><i class="fab fa-twitter"></i></a>
+                      <a><i class="fab fa-instagram"></i></a>
+                      <a><i class="fab fa-pinterest-p"></i></a>
+                      <a><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <h4 class="name" style="font-size: 16px"><a>Chijioke Uzoho (GACN)</a></h4>
+                    <span class="designation">Host</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Speaker Block 5 -->
+              <div class="speaker-block has-active col-xl-6 col-lg-6 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay="400ms" data-category="panelist">
+                <div class="inner-box active">
+                  <div class="image-box">
+                    <figure class="image">
+                      <a>
+                        <img src="{% static 'images/resource/5.jpg' %}" alt="Image" />
+                        <img src="{% static 'images/resource/5.jpg' %}" alt="Image" />
+                      </a>
+                    </figure>
+                    <div class="icon-box">
+                      <span class="icon share-icon fa fa-share-alt"></span>
+                    </div>
+                    <div class="social-links">
+                      <a><i class="fab fa-twitter"></i></a>
+                      <a><i class="fab fa-instagram"></i></a>
+                      <a><i class="fab fa-pinterest-p"></i></a>
+                      <a><i class="fab fa-facebook-f"></i></a>
+                    </div>
+                  </div>
+                  <div class="info-box">
+                    <h4 class="name" style="font-size: 16px"><a>Felix Isere, Esq (Special Adviser To Edo State Governor On Oil And Gas)</a></h4>
+                    <span class="designation">Host</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Btn Box -->
+          <div class="btn-box text-center">
+            <a href="{% url 'reservation' %}" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Reserve Seat</span></a>
+          </div>
+        </div>
+      </section>
+      <!-- End Speakers Section -->
+
+      <!-- Powered By Section -->
+      <section class="powered-by-section" style="
+          background: linear-gradient(135deg, #1a8c40 0%, #042b15 100%);
+          padding: 80px 0;
+        ">
+        <div class="auto-container">
+          <div class="powered-by-content text-center">
+            <div class="logo-placeholder" style="
+                width: 150px;
+                height: 150px;
+                margin: 0 auto 30px;
+                background: rgba(255, 255, 255, 0.1);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              ">
+              <img src="{% static 'images/edsg.jpg' %}" alt="edsg" style="border-radius: 50%" />
+            </div>
+            <div class="sec-title light text-center">
+              <span class="sub-title" style="color: #f2b705">Official Support</span>
+              <h2 class="text-reveal-anim" style="color: #ffffff; font-size: 36px; margin: 15px 0">Powered By</h2>
+              <h3 style="color: #ffffff; font-size: 28px; margin: 20px 0">Edo State Government</h3>
+              <p style="
+                  color: rgba(255, 255, 255, 0.8);
+                  font-size: 18px;
+                  max-width: 600px;
+                  margin: 0 auto;
+                ">Committed to Sustainable Energy and Economic Growth</p>
+            </div>
+            <div class="btn-box" style="margin-top: 40px">
+              <a href="{% url 'contact' %}" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Register Now</span></a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Powered By Section -->
+
+      <!-- Event Section -->
+      <section class="event-section">
+        <div class="shape-three bounce-y"></div>
+        <div class="shape-four bounce-y"></div>
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="sub-title">Event Schedule</span>
+            <h2 class="text-reveal-anim">Program Flow</h2>
+            <div class="text">
+              Join us for a day packed with inspiration, learning, and networking <br />
+              as we shape the future of Edo's youth together.
+            </div>
+          </div>
+
+          <div class="event-tabs tabs-box">
+            <ul class="tab-btns tab-buttons wow fadeInUp">
+              <li class="tab-btn active-btn" data-tab="#tab1">August 7, 2025</li>
+            </ul>
+
+            <!-- Image Column -->
+            <div class="tabs-content wow fadeInUp" data-wow-delay="200ms">
+              <!-- Tab -->
+              <div class="tab active-tab" id="tab1">
+                <div class="outer-box">
+                  <!-- Event Block -->
+                  <div class="event-block">
+                    <div class="inner-box event-block-inner">
+                      <div class="date-box">
+                        <div class="date">Opening</div>
+                        <div class="year"></div>
+                      </div>
+                      <div class="title-box">
+                        <h3 class="title"><a href="{% url 'home' %}">9:00</a></h3>
+                        <ul class="location-box">
+                          AM <br />
+                          10:30 AM
+                          <!--  <li>
+                        <i class="icon fal fa-info-circle"></i>By HE'S
+                        EXCELLENCY SENATOR MONDAY OKPEBHOLO (EXECUTIVE
+                        GOVERNOR OF EDO STATE)
+                      </li>  -->
+                        </ul>
+                      </div>
+                      <div class="btn-box"></div>
+                    </div>
+                  </div>
+
+           
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Event Section -->
+
+      <!-- Seat Reservation Section -->
+      <section id="seat-reservation-section" class="seat-reservation-section" style="background: #f9f9f9; padding: 60px 0;">
+        <div class="auto-container">
+          <div class="sec-title text-center">
+            <span class="sub-title">Reserve Your Seat</span>
+            <h2 class="text-reveal-anim" style="color:#111 !important;">Secure Your Spot at Edo Oil & Gas 2025</h2>
+            <div class="text" style="color:#111;">Fill in your details below to reserve your seat for the event.</div>
+          </div>
+          <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12">
+              <form id="seat-reservation-form" method="post" class="reservation-form" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-group">
+                  <input type="text" name="first_name" class="form-control" placeholder="First Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+                </div>
+                <div class="form-group">
+                  <input type="text" name="last_name" class="form-control" placeholder="Last Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+                </div>
+                <div class="form-group">
+                  <input type="email" name="email" class="form-control" placeholder="Email Address" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+                </div>
+                <div class="form-group">
+                  <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+                </div>
+                <div class="form-group text-center">
+                  <button type="submit" class="theme-btn btn-style-one bg-yellow" style="color:#111;"><span class="btn-title" style="color:#111;">Reserve Seat</span></button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Seat Reservation Section -->
+
+      <!-- Video Section -->
+      <section class="video-section parallax-section">
+        <div class="outer-box">
+          <div class="icon-two bounce-y"></div>
+          <div class="parallax-bg bg bg-image" data-speed="0.5" style="background-image: url({% static 'images/background/2.jpg' %})"></div>
+          <div class="image-box">
+            <div class="image-outer">
+              <figure class="image" style="width: 575px; height: 575px">
+                <img src="{% static 'images/resource/we-blacks.jpg' %}" alt="Image" style="object-fit: cover" />
+              </figure>
+            </div>
+          </div>
+          <div class="auto-container">
+            <div class="row">
+              <!-- Empty Column -->
+              <div class="empty-column col-lg-6 col-md-12 col-sm-12"></div>
+
+              <!-- Content Column -->
+              <div class="content-column col-lg-6 col-md-12 col-sm-12">
+                <div class="inner-column">
+                  <div class="sec-title yellow light">
+                    <span class="sub-title text-white">Be Part of the Movement</span>
+                    <h2 class="text-white">Not Registered?</h2>
+                  </div>
+                  <div class="btn-box">
+                    <a href="{% url 'reservation' %}" class="theme-btn btn-style-one"><span class="btn-title">Reserve Seat</span></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Video Section -->
+
+      <!-- Subscribe Section -->
+      <section class="subscribe-section">
+        <div class="auto-container">
+          <div class="outer-box">
+            <div class="content-box">
+              <div class="shape-ten"></div>
+              <div class="row">
+                <!-- Content Column -->
+                <div class="content-column col-xl-5 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
+                  <div class="inner-column">
+                    <div class="sub-title">Stay Updated</div>
+                    <h3 class="title">Signup For Updates</h3>
+                  </div>
+                </div>
+
+                <!-- Form Column -->
+                <div class="form-column col-xl-7 col-lg-12 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="200ms">
+                  <div class="inner-column">
+                    <!-- Subscribe Form -->
+                    <div class="subscribe-form">
+                      <form method="post" action="{% url 'home' %}" id="newsletter-form">
+                        <div class="form-group">
+                          <input type="email" name="email" placeholder="Enter Your Email Address." required />
+                          <button type="submit" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Subscribe</span></button>
+                        </div>
+                        <div class="form-message"></div>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End Subscribe Section -->
+
+      <!-- Main Footer -->
+      <footer class="main-footer footer-style-one">
+        <div class="bg bg-image" style="background-image: url({% static 'images/background/3.jpg' %})"></div>
+
+        <!-- Widgets Section -->
+        <div class="widgets-section">
+          <div class="auto-container">
+            <div class="footer-flex">
+              <!-- Footer Column -->
+              <div class="footer-column">
+                <div class="footer-widget about-widget">
+                  <div class="widget-content">
+                    <div class="logo">
+                      <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+                    </div>
+                    <div class="text">The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.</div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Column -->
+              <div class="footer-column">
+                <div class="footer-widget links-widget">
+                  <h3 class="widget-title">Quick Links</h3>
+                  <div class="widget-content">
+                    <ul class="user-links">
+                      <li>
+                        <i class="fa fa-angle-double-right"></i><a href="{% url 'home' %}">Home</a>
+                      </li>
+                      <li>
+                        <i class="fa fa-angle-double-right"></i><a href="{% url 'about' %}">About Us</a>
+                      </li>
+                      <li>
+                        <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
+                      </li>
+                      <li>
+                        <i class="fa fa-angle-double-right"></i><a href="{% url 'contact' %}">Contact</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Footer Column -->
+              <div class="footer-column">
+                <div class="footer-widget contact-widget">
+                  <h3 class="widget-title">Contact Info</h3>
+                  <div class="widget-content">
+                    <ul class="contact-list-two light">
+                      <li>
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                      </li>
+                      <li>
+                        <i class="icon lnr-icon-phone-handset"></i>
+                        <span class="title">Call Us</span>
+                        <div class="text">
+                          <a href="tel:+2348153732506">+234 802 354 1175</a>
+                        </div>
+                      </li>
+                      <li>
+                        <i class="fa fa-location-dot"></i>
+                        <span style="margin-left: 10px;">Benin City, Edo State, Nigeria.</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="auto-container">
+            <div class="inner-container">
+              <div class="copyright-text">
+                © Copyright 2025 All Rights Reserved by Edo Oil and Gas Summit. | Privacy Policy| <a href="{% url 'privacy_policy' %}" style="color: #ffc000; text-decoration: none;">Privacy Policy</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- End Main Footer -->
+    </div>
+    <!-- End Page Wrapper -->
+
+    <!-- Back To Top Start -->
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+      </svg>
+    </div>
+    <!-- back to top end -->
+
+
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/lightcase.js' %}"></script>
+    <script src="{% static 'js/swipper.min.js' %}"></script>
+    <script src="{% static 'js/backtotop.js' %}"></script>
+    <script src="{% static 'js/gsap.min.js' %}"></script>
+    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+    <script src="{% static 'js/splitType.js' %}"></script>
+    <script src="{% static 'js/SplitText.min.js' %}"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+  
+    <!-- Color Setting -->
+    <script src="{% static 'js/color-settings.js' %}"></script>
+
+ 
+
+  </body>
+</html>
