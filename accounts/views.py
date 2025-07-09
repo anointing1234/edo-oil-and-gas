@@ -146,7 +146,7 @@ def reserve_seat(request):
         </html>
         """
 
-        admin_email = 'yakubudestiny9@gmail.com'  # Replace with actual admin email
+        admin_email = 'info@edooilandgassummit.com'  # Replace with actual admin email
 
         try:
             # Send HTML email
@@ -224,7 +224,7 @@ def contact_view(request):
         </html>
         """
 
-        admin_email = 'yakubudestiny9@gmail.com'  # Replace with actual admin
+        admin_email = 'info@edooilandgassummit.com'  # Replace with actual admin
 
         try:
             email_message = EmailMessage(

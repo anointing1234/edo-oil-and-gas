@@ -367,7 +367,7 @@
               <div class="inner-column">
                 <div class="contact-form">
                   <form method="post" id="email-form" novalidate>
-                    
+                       {% csrf_token %}
                     <div class="row">
                       <div class="form-group col-lg-12">
                         <div class="response"></div>
@@ -799,32 +799,30 @@
     </div>
     <!-- back to top end -->
 
-    <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script><script src="{% static 'js/jquery.js' %}"></script>
-    <script src="{% static 'js/popper.min.js' %}"></script>
-    <script src="{% static 'js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
-    <script src="{% static 'js/jquery.countdown.js' %}"></script>
-    <script src="{% static 'js/wow.js' %}"></script>
-    <script src="{% static 'js/appear.js' %}"></script>
-    <script src="{% static 'js/lightcase.js' %}"></script>
-    <script src="{% static 'js/swipper.min.js' %}"></script>
-    <script src="{% static 'js/backtotop.js' %}"></script>
-    <script src="{% static 'js/gsap.min.js' %}"></script>
-    <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
-    <script src="{% static 'js/splitType.js' %}"></script>
-    <script src="{% static 'js/SplitText.min.js' %}"></script>
-    <script src="{% static 'js/script.js' %}"></script>
-    <!-- Form Handler -->
-    <script src="{% static 'js/form-handler.js' %}"></script>
-    <!-- Color Setting -->
-    <script src="{% static 'js/color-settings.js' %}"></script>
+    <script data-cfasync="false" src="{% static 'cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/lightcase.js' %}"></script>
+<script src="{% static 'js/swipper.min.js' %}"></script>
+<script src="{% static 'js/backtotop.js' %}"></script>
+<script src="{% static 'js/gsap.min.js' %}"></script>
+<script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'js/splitType.js' %}"></script>
+<script src="{% static 'js/SplitText.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Form Handler -->
+<script src="{% static 'js/form-handler.js' %}"></script>
+<!-- Color Setting -->
+<script src="{% static 'js/color-settings.js' %}"></script>
 
-
-
-    
-
-
-    
+<!-- SweetAlert2 CSS & JS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <style>
   /* Full-screen overlay */
@@ -854,30 +852,26 @@
   @keyframes spin {
     to { transform: rotate(360deg); }
   }
+
+  /* Ensure SweetAlert2 popups are centered and styled */
+  .swal2-centered .swal2-popup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.2em;
+  }
 </style>
-
-
-
-
-  
-  
-  
-
-    
 
 <!-- Full-screen overlay with spinner -->
 <div id="loading-overlay">
   <div class="spinner"></div>
 </div>
 
-<!-- Toastify CSS & JS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"/>
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-
 <!-- Your JavaScript code here -->
 <script>
   (function(){
-    const form = document.getElementById('email-form'); // Correctly select the form
+    const form = document.getElementById('email-form');
     const overlay = document.getElementById('loading-overlay');
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
@@ -888,19 +882,9 @@
       const data = {};
       new FormData(form).forEach((v, k) => data[k] = v);
 
-      // Display a success message for a few seconds
-      const successToast = Toastify({
-        text: 'please wait...',
-        duration: 4000,
-        gravity: "top",
-        position: "right",
-        backgroundColor: "linear-gradient(to right,rgb(12, 56, 29),rgb(49, 138, 22))",
-        stopOnFocus: true
-      });
+ 
 
-      successToast.showToast();
-
-      // Send the reservation data to the server
+      // Send the data to the server
       const response = await fetch("{% url 'contact_view' %}", {
         method: 'POST',
         headers: {
@@ -912,23 +896,30 @@
 
       const result = await response.json();
       overlay.style.display = 'none'; // Hide the loading animation
+      Swal.close(); // Close the loading alert
 
       if (result.status === 'success') {
-        Toastify({
+        Swal.fire({
+          title: 'Success!',
           text: result.message,
-          duration: 10000,
-          gravity: "top",
-          position: "right",
-          backgroundColor: "green",
-        }).showToast();
+          icon: 'success',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#4CAF50',
+          customClass: {
+            popup: 'swal2-centered'
+          }
+        });
       } else {
-        Toastify({
+        Swal.fire({
+          title: 'Error!',
           text: result.message,
-          duration: 10000,
-          gravity: "top",
-          position: "right",
-          backgroundColor: "red",
-        }).showToast();
+          icon: 'error',
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#FF0000',
+          customClass: {
+            popup: 'swal2-centered'
+          }
+        });
       }
     });
   })();
