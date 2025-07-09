@@ -130,3 +130,45 @@
   width: 100%;
   height: auto;
 }
+
+
+
+
+.preloader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: #ffffff;
+}
+
+.preloader svg,
+.preloader img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  margin-top: -70px;
+}
+
+.preloader:before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  margin: 0 auto;
+  margin-top: -10px;
+  color: darkgreen;
+  font-family: var(--text-font);
+  font-family: var(--title-font);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  content: "Loading";
+  transition: none;
+}

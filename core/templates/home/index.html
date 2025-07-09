@@ -13,7 +13,7 @@
     <meta property="og:title" content="EOGS 2025 | Edo Oil and Gas Summit | Driving Innovation and Growth" />
     <meta property="og:description" content="Edo Oil and Gas Summit 2025 - A platform for innovation, investment, and sustainable growth in Edo State's oil and gas industry." />
     <meta property="og:image" content="{% static 'images/resource/banner-main.jpg' %}' " />
-    <meta property="og:url" content="http://www.edooilandgassummit.com" />
+    <meta property="og:url" content="http://edooilandgassummit.com" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Edo Oil and Gas Summit" />
 
@@ -376,7 +376,10 @@
                     <li>
                       <a href="">Gallery</a>
                     </li>
-                    <li>
+                 
+                       <li><a href="{% url 'sponsors' %}">Sponsors</a></li>
+                  <li><a href="{% url 'exhibitors' %}">Exhibitors</a></li>
+                     <li>
                       <a href="{% url 'contact' %}">Contact</a>
                     </li>
                   </ul>
@@ -451,20 +454,7 @@
               </li>
             </ul>
 
-            <ul class="social-links">
-              <li>
-                <a href="{% url 'home' %}#"><i class="fab fa-twitter"></i></a>
-              </li>
-              <li>
-                <a href="{% url 'home' %}#"><i class="fab fa-facebook-f"></i></a>
-              </li>
-              <li>
-                <a href="{% url 'home' %}#"><i class="fab fa-pinterest"></i></a>
-              </li>
-              <li>
-                <a href="{% url 'home' %}#"><i class="fab fa-instagram"></i></a>
-              </li>
-            </ul>
+           
           </nav>
         </div>
         <!-- End Mobile Menu -->
@@ -572,23 +562,7 @@
         <div class="text">Benin City, Edo State. Nigeria</div>
       </li>
 
-      <!-- Sponsors Section -->
-      <li>
-        <i class="icon lnr-icon-star"></i>
-        <span class="title">Sponsors</span>
-        <div class="text ">
-       
-        </div>
-      </li>
-
-      <!-- Exhibitors Section -->
-      <li>
-        <i class="icon lnr-icon-briefcase"></i>
-        <span class="title">Exhibitors</span>
-        <div class="text ">
-       
-        </div>
-      </li>
+    
     </ul>
   </div>
 </section>

@@ -67,6 +67,13 @@ def reservation(request):
     return render(request,'home/reservation.html')
 
 
+def sponsors(request):
+    return render(request,'home/sponsors.html')
+
+def exhibitors(request):
+    return render(request,'home/exhibitors.html')
+
+
 def reserve_seat(request):
     if request.method == 'POST':
         # Get form data
