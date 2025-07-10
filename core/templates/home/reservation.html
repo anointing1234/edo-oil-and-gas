@@ -934,6 +934,7 @@
   </div>
 </div>
 
+
 <!-- Form Section -->
 <section class="form-section py-5" id="register">
   <div class="container">
@@ -989,8 +990,10 @@
               class="form-control"
               placeholder="Enter your email address"
               required
+              oninput="let error = document.getElementById('email-error'); let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; error.style.display = pattern.test(this.value.trim()) ? 'none' : 'block';"
             />
           </div>
+          <div id="email-error" class="error-message" style="color: red; font-size: 1em; font-weight: bold; margin-top: 5px; display: none;">Please enter a valid email (e.g., user@example.com).</div>
         </div>
 
         <div class="mb-3">
@@ -1002,10 +1005,12 @@
               id="phone"
               name="phone"
               class="form-control"
-              placeholder="Enter your phone number"
+              placeholder="Enter your phone number (e.g., +2348034715913)"
               required
+              oninput="let error = document.getElementById('phone-error'); let pattern = /^\+234[0-9]{10}$|^[0-9]{11}$/; error.style.display = pattern.test(this.value.trim()) ? 'none' : 'block';"
             />
           </div>
+          <div id="phone-error" class="error-message" style="color: red; font-size: 1em; font-weight: bold; margin-top: 5px; display: none;">Please enter a valid Nigerian phone number (e.g., +2348034715913 or 08034715913).</div>
         </div>
 
         <div class="mb-3">
@@ -1053,61 +1058,58 @@
           </div>
         </div>
 
-        
-         <div class="form-group">
-                <button type="submit" class="submit-btn">
-                  <span class="btn-title">Reserve My Seat</span>
-                </button>
-              </div>
+        <div class="form-group text-center">
+          <button type="submit" class="submit-btn">
+            <span class="btn-title">Reserve My Seat</span>
+          </button>
+        </div>
       </form>
     </div>
   </div>
 </section>
+<!-- End Form Section -->
 
-      <!-- End Seat Reservation Section -->
-      <style>
-        @media (max-width: 767px) {
-          .seat-reservation-section {
-            padding: 30px 0 !important;
-          }
-          .seat-reservation-section .col-lg-6,
-          .seat-reservation-section .col-md-8,
-          .seat-reservation-section .col-sm-12 {
-            max-width: 100%;
-            flex: 0 0 100%;
-          }
-          .seat-reservation-section .form-control {
-            font-size: 16px;
-            padding: 12px 10px;
-          }
-        }
-        .seat-reservation-section input.form-control,
-        .seat-reservation-section input.form-control:focus,
-        .seat-reservation-section input.form-control:active {
-          color: #111 !important;
-          background: #fff !important;
-        }
-        .seat-reservation-section input.form-control::placeholder {
-          color: #111 !important;
-          opacity: 1 !important;
-        }
-        .seat-reservation-section .theme-btn.btn-style-one.bg-yellow,
-        .seat-reservation-section .theme-btn.btn-style-one.bg-yellow span {
-          color: #111 !important;
-        }
-        .seat-reservation-section .form-message {
-          color: #111 !important;
-        }
-      </style>
-    </div>
+<style>
+  @media (max-width: 767px) {
+    .form-section {
+      padding: 30px 0 !important;
+    }
+    .form-section .col-lg-6,
+    .form-section .col-md-8,
+    .form-section .col-sm-12 {
+      max-width: 100%;
+      flex: 0 0 100%;
+    }
+    .form-section .form-control {
+      font-size: 16px;
+      padding: 12px 10px;
+    }
+  }
+  .form-section input.form-control,
+  .form-section input.form-control:focus,
+  .form-section input.form-control:active {
+    color: #111 !important;
+    background: #fff !important;
+  }
+  .form-section input.form-control::placeholder {
+    color: #111 !important;
+    opacity: 1 !important;
+  }
+  .form-section .submit-btn {
+    color: #111 !important;
+    background: #FFD700 !important;
+  }
+  .form-section .submit-btn span {
+    color: #111 !important;
+  }
+  .form-section .form-message {
+    color: #111 !important;
+  }
+</style>
 
 <!-- Main Footer -->
 <footer class="main-footer footer-style-three">
   <div class="bg bg-pattern-10"></div>
-
-
-
-
   <!-- Widgets Section -->
   <div class="widgets-section">
     <div class="auto-container">
@@ -1116,19 +1118,16 @@
         <div class="footer-column col-xl-5 col-lg-12 col-md-12 col-sm-12">
           <div class="footer-widget about-widget">
             <div class="widget-content">
-            
               <h1 class="title">Let's Connect.</h1>
               <div class="text">
                 The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.
               </div>
-              
               <div class="copyright-text">
-                   Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
+                Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
               </div>
             </div>
           </div>
         </div>
-
         <!-- Footer Column -->
         <div class="footer-column col-xl-7 col-lg-12 col-md-12 col-sm-12">
           <div class="footer-widget post-widget">
@@ -1146,7 +1145,6 @@
               </div>
             </div>
           </div>
-
           <div class="footer-widget newsletter-widget">
             <h3 class="widget-title">Newsletter</h3>
             <div class="widget-content">
@@ -1157,8 +1155,7 @@
               <div class="newsletter-form-two">
                 <form>
                   <div class="form-group" style="display: flex; gap: 10px">
-                    <input type="email" name="email" class="email" value="" placeholder="Subscribe Email ......"
-                      required="" style="max-width: 500px" />
+                    <input type="email" name="email" class="email" value="" placeholder="Subscribe Email ......" required="" style="max-width: 500px" />
                     <button type="submit" class="theme-btn btn-style-one bg-yellow">
                       <span class="btn-title">Subscribe</span>
                     </button>
@@ -1167,14 +1164,12 @@
               </div>
             </div>
           </div>
-
           <div class="footer-widget contact-widget">
             <h3 class="widget-title">Information</h3>
             <div class="widget-content">
               <ul class="contact-list-three light">
                 <li class="location">
-                  <i class="fa fa-map-marker-alt"></i>Benin City, Edo State,
-                        Nigeria.
+                  <i class="fa fa-map-marker-alt"></i>Benin City, Edo State, Nigeria.
                 </li>
               </ul>
             </div>
@@ -1185,9 +1180,8 @@
                     <i class="fa fa-phone"></i>
                     <div class="h5">Contact No.</div>
                   </div>
-                  <a >+234 803 471 5913 or  234 8064425068</a>
+                  <a>+234 803 471 5913 or 234 8064425068</a>
                 </li>
-
                 <li>
                   <div class="icon-box">
                     <i class="fa fa-envelope"></i>
@@ -1203,11 +1197,7 @@
     </div>
   </div>
 </footer>
-    <!--End Main Footer -->
-
-
-
-    
+<!-- End Main Footer -->
 
 <style>
   /* Full-screen overlay */
@@ -1239,39 +1229,26 @@
   }
 </style>
 
-
-
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js' %}"></script>
-  <script src="{% static 'js/jquery.js' %}"></script>
-  <script src="{% static 'js/popper.min.js' %}"></script>
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-  <script src="{% static 'js/jquery.fancybox.js' %}"></script>
-  <script src="{% static 'js/jquery.countdown.js' %}"></script>
-  <script src="{% static 'js/wow.js' %}"></script>
-  <script src="{% static 'js/appear.js' %}"></script>
-  <script src="{% static 'js/lightcase.js' %}"></script>
-  <script src="{% static 'js/swipper.min.js' %}"></script>
-  <script src="{% static 'js/backtotop.js' %}"></script>
-  <script src="{% static 'js/gsap.min.js' %}"></script>
-  <script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
-  <script src="{% static 'js/splitType.js' %}"></script>
-  <script src="{% static 'js/SplitText.min.js' %}"></script>
-  <script src="{% static 'js/script.js' %}"></script>
-  <!-- Form Handler -->
-  <script src="{% static 'js/form-handler.js' %}"></script>
-  <!-- Color Setting -->
-  <script src="{% static 'js/color-settings.js' %}"></script>
-  
-  
-  
-
-    
-
-<!-- Full-screen overlay with spinner -->
-<div id="loading-overlay">
-  <div class="spinner"></div>
-</div>
-
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="{% static 'js/jquery.js' %}"></script>
+<script src="{% static 'js/popper.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+<script src="{% static 'js/jquery.countdown.js' %}"></script>
+<script src="{% static 'js/wow.js' %}"></script>
+<script src="{% static 'js/appear.js' %}"></script>
+<script src="{% static 'js/lightcase.js' %}"></script>
+<script src="{% static 'js/swipper.min.js' %}"></script>
+<script src="{% static 'js/backtotop.js' %}"></script>
+<script src="{% static 'js/gsap.min.js' %}"></script>
+<script src="{% static 'js/ScrollTrigger.min.js' %}"></script>
+<script src="{% static 'js/splitType.js' %}"></script>
+<script src="{% static 'js/SplitText.min.js' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<!-- Form Handler -->
+<script src="{% static 'js/form-handler.js' %}"></script>
+<!-- Color Setting -->
+<script src="{% static 'js/color-settings.js' %}"></script>
 
 <!-- SweetAlert2 CSS & JS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
@@ -1282,51 +1259,100 @@
   <div class="spinner"></div>
 </div>
 
-<!-- Your JavaScript code here -->
+
+<!-- JavaScript code -->
 <script>
-  (function(){
+  document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('seat-reservation-form');
     const overlay = document.getElementById('loading-overlay');
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      console.log('Form submission triggered'); // Debug log
+
+      // Email and Phone validation
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isEmailValid = emailPattern.test(emailInput.value.trim());
+      console.log('Email valid:', isEmailValid); // Debug log
+
+      const phoneInput = document.getElementById('phone');
+      const phoneError = document.getElementById('phone-error');
+      const phonePattern = /^\+234[0-9]{10}$|^0[0-9]{10}$/;
+      const isPhoneValid = phonePattern.test(phoneInput.value.trim());
+      console.log('Phone valid:', isPhoneValid); // Debug log
+
+      emailError.style.display = 'none';
+      phoneError.style.display = 'none';
+
+      if (!isEmailValid) {
+        emailError.style.display = 'block';
+        console.log('Email validation failed'); // Debug log
+        return;
+      }
+      if (!isPhoneValid) {
+        phoneError.style.display = 'block';
+        console.log('Phone validation failed'); // Debug log
+        return;
+      }
+
+      // Proceed with form submission if valid
       overlay.style.display = 'flex'; // Show the loading animation
+      console.log('Validation passed, sending fetch request'); // Debug log
 
       const data = {};
       new FormData(form).forEach((v, k) => data[k] = v);
 
- 
-
-      // Send the reservation data to the server
-      const response = await fetch("{% url 'reserve_seat' %}", {
-        method: 'POST',
-        headers: {
-          'X-CSRFToken': csrftoken,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(data)
-      });
-
-      const result = await response.json();
-      overlay.style.display = 'none'; // Hide the loading animation
-      Swal.close(); // Close the loading alert
-
-      if (result.status === 'success') {
-        Swal.fire({
-          title: 'Success!',
-          text: result.message,
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#4CAF50',
-          customClass: {
-            popup: 'swal2-centered'
-          }
+      try {
+        const response = await fetch("{% url 'reserve_seat' %}", {
+          method: 'POST',
+          headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(data)
         });
-      } else {
+
+        const result = await response.json();
+        overlay.style.display = 'none'; // Hide the loading animation
+        console.log('Server response:', result); // Debug log
+
+        if (result.status === 'success') {
+          Swal.fire({
+            title: 'Success!',
+            text: result.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#4CAF50',
+            customClass: {
+              popup: 'swal2-centered'
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              console.log('Success OK clicked, reloading page'); // Debug log
+              location.reload();
+            }
+          });
+        } else {
+          Swal.fire({
+            title: 'Error!',
+            text: result.message,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#FF0000',
+            customClass: {
+              popup: 'swal2-centered'
+            }
+          });
+        }
+      } catch (error) {
+        overlay.style.display = 'none';
+        console.error('Fetch error:', error); // Debug log
         Swal.fire({
           title: 'Error!',
-          text: result.message,
+          text: 'An error occurred while submitting the form. Please try again later.',
           icon: 'error',
           confirmButtonText: 'OK',
           confirmButtonColor: '#FF0000',
@@ -1336,7 +1362,7 @@
         });
       }
     });
-  })();
+  });
 </script>
 
 <style>
@@ -1350,7 +1376,5 @@
   }
 </style>
 
-
-
-  </body>
+</body>
 </html>

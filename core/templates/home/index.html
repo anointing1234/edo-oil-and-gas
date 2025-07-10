@@ -1037,11 +1037,7 @@
                         <ul class="location-box">
                           AM <br />
                           10:30 AM
-                          <!--  <li>
-                        <i class="icon fal fa-info-circle"></i>By HE'S
-                        EXCELLENCY SENATOR MONDAY OKPEBHOLO (EXECUTIVE
-                        GOVERNOR OF EDO STATE)
-                      </li>  -->
+                       
                         </ul>
                       </div>
                       <div class="btn-box"></div>
@@ -1057,7 +1053,8 @@
         </div>
       </section>
       <!-- End Event Section -->
-<!-- Seat Reservation Section -->
+
+      <!-- Seat Reservation Section -->
 <section id="seat-reservation-section" class="seat-reservation-section" style="background: #f9f9f9; padding: 60px 0;">
   <div class="auto-container">
     <div class="sec-title text-center">
@@ -1067,7 +1064,7 @@
     </div>
     <div class="row justify-content-center">
       <div class="col-lg-6 col-md-8 col-sm-12">
-        <form id="seat-reservation-form"  class="reservation-form" autocomplete="off">
+        <form id="seat-reservation-form" class="reservation-form" autocomplete="off">
           {% csrf_token %}
           <div class="form-group">
             <input type="text" name="first_name" class="form-control" placeholder="First Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
@@ -1076,42 +1073,31 @@
             <input type="text" name="last_name" class="form-control" placeholder="Last Name" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
           </div>
           <div class="form-group">
-            <input type="email" name="email" class="form-control" placeholder="Email Address" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+            <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email address" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" oninput="let error = document.getElementById('email-error'); let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; error.style.display = pattern.test(this.value.trim()) ? 'none' : 'block';" />
+            <div id="email-error" class="error-message" style="color: red; font-size: 1em; font-weight: bold; margin-top: 5px; display: none;">Please enter a valid email (e.g., user@example.com).</div>
           </div>
           <div class="form-group">
-            <input type="tel" name="phone" class="form-control" placeholder="Phone Number" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" />
+            <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone number (e.g., +2348034715913)" required style="color:#111;background:#fff;" onfocus="this.style.color='#111'" onblur="this.style.color='#111'" oninput="let error = document.getElementById('phone-error'); let pattern = /^\+234[0-9]{10}$|^0[0-9]{10}$/; error.style.display = pattern.test(this.value.trim()) ? 'none' : 'block';" />
+            <div id="phone-error" class="error-message" style="color: red; font-size: 1em; font-weight: bold; margin-top: 5px; display: none;">Please enter a valid  phone number (e.g., +2348034715913 or 08034715913).</div>
           </div>
-          
-          
-          <!-- Occupation -->
           <div class="form-group mb-3">
             <div class="input-group">
               <input type="text" id="occupation" name="occupation" class="form-control" placeholder="Enter your occupation" required />
             </div>
           </div>
-
-          <!-- Company Name -->
           <div class="form-group mb-3">
-        
             <div class="input-group">
               <input type="text" id="company_name" name="company_name" class="form-control" placeholder="Enter your company name" required />
             </div>
           </div>
-
-          <!-- Company Address -->
           <div class="form-group mb-4">
-          
             <div class="input-group">
               <input type="text" id="company_address" name="company_address" class="form-control" placeholder="Enter your company address" required />
             </div>
           </div>
-
           <div class="form-group text-center">
             <button type="submit" class="theme-btn btn-style-one bg-yellow" style="color:#111;"><span class="btn-title" style="color:#111;">Reserve Seat</span></button>
           </div>
-          
-
-
         </form>
       </div>
     </div>
@@ -1119,181 +1105,169 @@
 </section>
 <!-- End Seat Reservation Section -->
 
-
-      <!-- Video Section -->
-      <section class="video-section parallax-section">
-        <div class="outer-box">
-          <div class="icon-two bounce-y"></div>
-          <div class="parallax-bg bg bg-image" data-speed="0.5" style="background-image: url({% static 'images/background/2.jpg' %})"></div>
-          <div class="image-box">
-            <div class="image-outer">
-              <figure class="image" style="width: 575px; height: 575px">
-                <img src="{% static 'images/resource/we-blacks.jpg' %}" alt="Image" style="object-fit: cover" />
-              </figure>
-            </div>
-          </div>
-          <div class="auto-container">
-            <div class="row">
-              <!-- Empty Column -->
-              <div class="empty-column col-lg-6 col-md-12 col-sm-12"></div>
-
-              <!-- Content Column -->
-              <div class="content-column col-lg-6 col-md-12 col-sm-12">
-                <div class="inner-column">
-                  <div class="sec-title yellow light">
-                    <span class="sub-title text-white">Be Part of the Movement</span>
-                    <h2 class="text-white">Not Registered?</h2>
-                  </div>
-                  <div class="btn-box">
-                    <a href="{% url 'reservation' %}" class="theme-btn btn-style-one"><span class="btn-title">Reserve Seat</span></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Video Section -->
-
-      <!-- Subscribe Section -->
-      <section class="subscribe-section">
-        <div class="auto-container">
-          <div class="outer-box">
-            <div class="content-box">
-              <div class="shape-ten"></div>
-              <div class="row">
-                <!-- Content Column -->
-                <div class="content-column col-xl-5 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
-                  <div class="inner-column">
-                    <div class="sub-title">Stay Updated</div>
-                    <h3 class="title">Signup For Updates</h3>
-                  </div>
-                </div>
-
-                <!-- Form Column -->
-                <div class="form-column col-xl-7 col-lg-12 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="200ms">
-                  <div class="inner-column">
-                    <!-- Subscribe Form -->
-                    <div class="subscribe-form">
-                      <form method="post" action="{% url 'home' %}" id="newsletter-form">
-                        <div class="form-group">
-                          <input type="email" name="email" placeholder="Enter Your Email Address." required />
-                          <button type="submit" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Subscribe</span></button>
-                        </div>
-                        <div class="form-message"></div>
-                      </form>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Subscribe Section -->
-
-      <!-- Main Footer -->
-      <footer class="main-footer footer-style-one">
-        <div class="bg bg-image" style="background-image: url({% static 'images/background/3.jpg' %})"></div>
-
-        <!-- Widgets Section -->
-        <div class="widgets-section">
-          <div class="auto-container">
-            <div class="footer-flex">
-              <!-- Footer Column -->
-              <div class="footer-column">
-                <div class="footer-widget about-widget">
-                  <div class="widget-content">
-                    <div class="logo">
-                      <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
-                    </div>
-                    <div class="text">The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.</div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Footer Column -->
-              <div class="footer-column">
-                <div class="footer-widget links-widget">
-                  <h3 class="widget-title">Quick Links</h3>
-                  <div class="widget-content">
-                    <ul class="user-links">
-                      <li>
-                        <i class="fa fa-angle-double-right"></i><a href="{% url 'home' %}">Home</a>
-                      </li>
-                      <li>
-                        <i class="fa fa-angle-double-right"></i><a href="{% url 'about' %}">About Us</a>
-                      </li>
-                      <li>
-                        <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
-                      </li>
-                      <li>
-                        <i class="fa fa-angle-double-right"></i><a href="{% url 'contact' %}">Contact</a>
-                      </li>
-                   
-                      <li>
-                        <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
-                      </li>
-                     
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Footer Column -->
-              <div class="footer-column">
-                <div class="footer-widget contact-widget">
-                  <h3 class="widget-title">Contact Info</h3>
-                  <div class="widget-content">
-                    <ul class="contact-list-two light">
-                      <li>
-                        <i class="fa fa-envelope"></i>
-                        <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
-                      </li>
-                      <li>
-                        <i class="icon lnr-icon-phone-handset"></i>
-                        <span class="title">Call Us</span>
-                        <div class="text">
-                          <a>+234 803 471 5913 or  234 8064425068</a>
-                        </div>
-                      </li>
-                      <li>
-                        <i class="fa fa-location-dot"></i>
-                        <span style="margin-left: 10px;">Benin City, Edo State, Nigeria.</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <div class="auto-container">
-            <div class="inner-container">
-              <div class="copyright-text">
-                 Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-      <!-- End Main Footer -->
+<!-- Video Section -->
+<section class="video-section parallax-section">
+  <div class="outer-box">
+    <div class="icon-two bounce-y"></div>
+    <div class="parallax-bg bg bg-image" data-speed="0.5" style="background-image: url({% static 'images/background/2.jpg' %})"></div>
+    <div class="image-box">
+      <div class="image-outer">
+        <figure class="image" style="width: 575px; height: 575px">
+          <img src="{% static 'images/resource/we-blacks.jpg' %}" alt="Image" style="object-fit: cover" />
+        </figure>
+      </div>
     </div>
-    <!-- End Page Wrapper -->
-
-    <!-- Back To Top Start -->
-    <div class="progress-wrap">
-      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
-        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
-      </svg>
+    <div class="auto-container">
+      <div class="row">
+        <!-- Empty Column -->
+        <div class="empty-column col-lg-6 col-md-12 col-sm-12"></div>
+        <!-- Content Column -->
+        <div class="content-column col-lg-6 col-md-12 col-sm-12">
+          <div class="inner-column">
+            <div class="sec-title yellow light">
+              <span class="sub-title text-white">Be Part of the Movement</span>
+              <h2 class="text-white">Not Registered?</h2>
+            </div>
+            <div class="btn-box">
+              <a href="{% url 'reservation' %}" class="theme-btn btn-style-one"><span class="btn-title">Reserve Seat</span></a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <!-- back to top end -->
+  </div>
+</section>
+<!-- End Video Section -->
 
+<!-- Subscribe Section -->
+<section class="subscribe-section">
+  <div class="auto-container">
+    <div class="outer-box">
+      <div class="content-box">
+        <div class="shape-ten"></div>
+        <div class="row">
+          <!-- Content Column -->
+          <div class="content-column col-xl-5 col-lg-12 col-md-12 col-sm-12 wow fadeInLeft">
+            <div class="inner-column">
+              <div class="sub-title">Stay Updated</div>
+              <h3 class="title">Signup For Updates</h3>
+            </div>
+          </div>
+          <!-- Form Column -->
+          <div class="form-column col-xl-7 col-lg-12 col-md-12 col-sm-12 wow fadeInRight" data-wow-delay="200ms">
+            <div class="inner-column">
+              <!-- Subscribe Form -->
+              <div class="subscribe-form">
+                <form method="post" action="{% url 'home' %}" id="newsletter-form">
+                  <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter Your Email Address" required oninput="let error = document.getElementById('newsletter-error'); let pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; error.style.display = pattern.test(this.value.trim()) ? 'none' : 'block';" />
+                    <button type="submit" class="theme-btn btn-style-one bg-yellow"><span class="btn-title">Subscribe</span></button>
+                  </div>
+                  <div id="newsletter-error" class="error-message" style="color: red; font-size: 1em; font-weight: bold; margin-top: 5px; display: none;">Please enter a valid email (e.g., user@example.com).</div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Subscribe Section -->
 
-    <style>
+<!-- Main Footer -->
+<footer class="main-footer footer-style-one">
+  <div class="bg bg-image" style="background-image: url({% static 'images/background/3.jpg' %})"></div>
+  <!-- Widgets Section -->
+  <div class="widgets-section">
+    <div class="auto-container">
+      <div class="footer-flex">
+        <!-- Footer Column -->
+        <div class="footer-column">
+          <div class="footer-widget about-widget">
+            <div class="widget-content">
+              <div class="logo">
+                <a href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="Logo" /></a>
+              </div>
+              <div class="text">The Edo Oil and Gas Summit 2025 is a premier platform dedicated to harnessing Edo State's natural gas potential, fostering innovation, collaboration, and sustainable development for Nigeria's energy transition.</div>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Column -->
+        <div class="footer-column">
+          <div class="footer-widget links-widget">
+            <h3 class="widget-title">Quick Links</h3>
+            <div class="widget-content">
+              <ul class="user-links">
+                <li>
+                  <i class="fa fa-angle-double-right"></i><a href="{% url 'home' %}">Home</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-double-right"></i><a href="{% url 'about' %}">About Us</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-double-right"></i><a href="{% url 'contact' %}">Contact</a>
+                </li>
+                <li>
+                  <i class="fa fa-angle-double-right"></i><a href="">Gallery</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- Footer Column -->
+        <div class="footer-column">
+          <div class="footer-widget contact-widget">
+            <h3 class="widget-title">Contact Info</h3>
+            <div class="widget-content">
+              <ul class="contact-list-two light">
+                <li>
+                  <i class="fa fa-envelope"></i>
+                  <a href="mailto:info@edooilandgassummit.com" target="_blank">info@edooilandgassummit.com</a>
+                </li>
+                <li>
+                  <i class="icon lnr-icon-phone-handset"></i>
+                  <span class="title">Call Us</span>
+                  <div class="text">
+                    <a>+234 803 471 5913 or 234 8064425068</a>
+                  </div>
+                </li>
+                <li>
+                  <i class="fa fa-location-dot"></i>
+                  <span style="margin-left: 10px;">Benin City, Edo State, Nigeria.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer Bottom -->
+  <div class="footer-bottom">
+    <div class="auto-container">
+      <div class="inner-container">
+        <div class="copyright-text">
+          Edo State Oil and Gas Summit 2025@<a href="https://tslnigeria.com/" style="color: #ffc000; text-decoration: none;">tslnigeria.com</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- End Main Footer -->
+
+<!-- Back To Top Start -->
+<div class="progress-wrap">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
+</div>
+<!-- back to top end -->
+
+<style>
   /* Full-screen overlay */
   #loading-overlay {
     position: fixed;
@@ -1338,10 +1312,8 @@
 <script src="{% static 'js/splitType.js' %}"></script>
 <script src="{% static 'js/SplitText.min.js' %}"></script>
 <script src="{% static 'js/script.js' %}"></script>
-
 <!-- Color Setting -->
 <script src="{% static 'js/color-settings.js' %}"></script>
-
 <!-- SweetAlert2 CSS & JS -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"/>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -1351,51 +1323,99 @@
   <div class="spinner"></div>
 </div>
 
-<!-- Your JavaScript code here -->
+<!-- JavaScript code -->
 <script>
-  (function(){
+  document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('seat-reservation-form');
     const overlay = document.getElementById('loading-overlay');
     const csrftoken = document.querySelector('[name=csrfmiddlewaretoken]').value;
 
     form.addEventListener('submit', async function(e) {
       e.preventDefault();
+      console.log('Form submission triggered'); // Debug log
+
+      // Email and Phone validation
+      const emailInput = document.getElementById('email');
+      const emailError = document.getElementById('email-error');
+      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const isEmailValid = emailPattern.test(emailInput.value.trim());
+      console.log('Email valid:', isEmailValid); // Debug log
+
+      const phoneInput = document.getElementById('phone');
+      const phoneError = document.getElementById('phone-error');
+      const phonePattern = /^\+234[0-9]{10}$|^0[0-9]{10}$/;
+      const isPhoneValid = phonePattern.test(phoneInput.value.trim());
+      console.log('Phone valid:', isPhoneValid); // Debug log
+
+      emailError.style.display = 'none';
+      phoneError.style.display = 'none';
+
+      if (!isEmailValid) {
+        emailError.style.display = 'block';
+        console.log('Email validation failed'); // Debug log
+        return;
+      }
+      if (!isPhoneValid) {
+        phoneError.style.display = 'block';
+        console.log('Phone validation failed'); // Debug log
+        return;
+      }
+
+      // Proceed with form submission if valid
       overlay.style.display = 'flex'; // Show the loading animation
+      console.log('Validation passed, sending fetch request'); // Debug log
 
       const data = {};
       new FormData(form).forEach((v, k) => data[k] = v);
 
- 
-
-      // Send the reservation data to the server
-      const response = await fetch("{% url 'reserve_seat' %}", {
-        method: 'POST',
-        headers: {
-          'X-CSRFToken': csrftoken,
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(data)
-      });
-
-      const result = await response.json();
-      overlay.style.display = 'none'; // Hide the loading animation
-      Swal.close(); // Close the loading alert
-
-      if (result.status === 'success') {
-        Swal.fire({
-          title: 'Success!',
-          text: result.message,
-          icon: 'success',
-          confirmButtonText: 'OK',
-          confirmButtonColor: '#4CAF50',
-          customClass: {
-            popup: 'swal2-centered'
-          }
+      try {
+        const response = await fetch("{% url 'reserve_seat' %}", {
+          method: 'POST',
+          headers: {
+            'X-CSRFToken': csrftoken,
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(data)
         });
-      } else {
+
+        const result = await response.json();
+        overlay.style.display = 'none'; // Hide the loading animation
+        console.log('Server response:', result); // Debug log
+
+        if (result.status === 'success') {
+          Swal.fire({
+            title: 'Success!',
+            text: result.message,
+            icon: 'success',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#4CAF50',
+            customClass: {
+              popup: 'swal2-centered'
+            }
+          }).then((result) => {
+            if (result.isConfirmed) {
+              console.log('Success OK clicked, reloading page'); // Debug log
+              location.reload();
+            }
+          });
+        } else {
+          Swal.fire({
+            title: 'Error!',
+            text: result.message,
+            icon: 'error',
+            confirmButtonText: 'OK',
+            confirmButtonColor: '#FF0000',
+            customClass: {
+              popup: 'swal2-centered'
+            }
+          });
+        }
+      } catch (error) {
+        overlay.style.display = 'none';
+        console.error('Fetch error:', error); // Debug log
         Swal.fire({
           title: 'Error!',
-          text: result.message,
+          text: 'An error occurred while submitting the form. Please try again later.',
           icon: 'error',
           confirmButtonText: 'OK',
           confirmButtonColor: '#FF0000',
@@ -1405,7 +1425,7 @@
         });
       }
     });
-  })();
+  });
 </script>
 
 <style>
@@ -1419,5 +1439,5 @@
   }
 </style>
 
-  </body>
+</body>
 </html>
