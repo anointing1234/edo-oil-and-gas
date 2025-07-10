@@ -65,3 +65,174 @@ Not Found: /static/js/bootstrap.min.js.map
 Not Found: /static/js/swiper-bundle.min.js.map
 C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\edo_submit\settings.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /send_message/
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The view accounts.views.send_message didn't return an HttpResponse object. It returned None instead.
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\edo_submit\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /send_message/
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The view accounts.views.send_message didn't return an HttpResponse object. It returned None instead.
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /send_message/
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 204, in _get_response
+    self.check_response(response, callback)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 332, in check_response
+    raise ValueError(
+    ...<2 lines>...
+    )
+ValueError: The view accounts.views.send_message didn't return an HttpResponse object. It returned None instead.
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+Not Found: /cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /send_message/
+Traceback (most recent call last):
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py", line 259, in send_message
+    return render(request,'home/email_message.html')
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'send_messages' not found. 'send_messages' is not a valid view function or pattern name.
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\urls.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Internal Server Error: /send_messages/
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Not Found: /.well-known/appspecific/com.chrome.devtools.json
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\accounts\views.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\edo_submit\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\USER\Documents\Projects\Projects\edo_oil&gas_submit\edo_submit\edo_submit\settings.py changed, reloading.
+Watching for file changes with StatReloader

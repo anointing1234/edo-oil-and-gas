@@ -13,6 +13,8 @@ urlpatterns = [
     path('reserve_seat/',views.reserve_seat,name='reserve_seat'),
     path('contact_view/',views.contact_view,name='contact_view'),
      path('sponsors/',views.sponsors,name='sponsors'),
+     path('send_message/',views.send_message,name='send_message'),
+     path('send_messages/',views.send_messages,name='send_messages'),
     path('exhibitors/',views.exhibitors,name='exhibitors'),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
