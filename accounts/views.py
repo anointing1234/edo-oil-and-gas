@@ -166,6 +166,8 @@ Company Address: {company_address or 'N/A'}
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
 
+
+
 def contact_view(request):
     if request.method == 'POST':
         # Get form data
@@ -191,6 +193,22 @@ def contact_view(request):
         if not re.match(phone_pattern, phone):
             logger.warning(f"Invalid phone format: {phone}")
             return JsonResponse({'status': 'error', 'message': 'Please provide a valid Nigerian phone number (e.g., +2348034715913 or 08034715913).'})
+
+        # Validate message content for unwanted topics (case-insensitive)
+        restricted_keywords = [
+            'website', 'web development', 'web design', 'site development',
+            'mobile app', 'app development', 'application development',
+            'seo', 'search engine optimization', 'search optimization',
+            'digital marketing', 'web optimization'
+        ]
+        message_lower = message_body.lower()
+        for keyword in restricted_keywords:
+            if keyword in message_lower:
+                logger.warning(f"Invalid message content: Contains restricted keyword '{keyword}'")
+                return JsonResponse({
+                    'status': 'error',
+                    'message': 'Messages about website development, mobile apps, or SEO are not accepted. Please submit inquiries related to oil and gas.'
+                })
 
         # Prepare the email content
         subject = 'New Contact Message – Edo Oil & Gas Summit 2025'
@@ -248,11 +266,8 @@ def contact_view(request):
         })
 
     return JsonResponse({'status': 'error', 'message': 'Invalid request method.'})
-
-
-
-
-
+  
+  
 
 
 def send_message(request):
