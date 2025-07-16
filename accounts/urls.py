@@ -15,6 +15,8 @@ urlpatterns = [
      path('sponsors/',views.sponsors,name='sponsors'),
      path('send_message/',views.send_message,name='send_message'),
      path('send_messages/',views.send_messages,name='send_messages'),
+     path('decline/',views.decline,name='decline'),
+     path('decline_message/',views.decline_message,name='decline_message'),
     path('exhibitors/',views.exhibitors,name='exhibitors'),
     re_path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),
     re_path(r'^static/(?P<path>.*)$', serve, {'document_root': settings.STATIC_ROOT}),
